@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <title>Cloubee</title>
+</head>
+
+<body>
+
+  <header>
+    <nav
+      class="fixed z-20 w-[100%] flex flex-direction-row justify-between items-center 2xl:px-60 2xl:py-6 bg-[#0D9276]">
+      <h1 class="logo text-white text-[32px]"><span
+          class="bg-gradient-to-t from-[#ffffff] to-[#00FF67] bg-clip-text text-transparent">C</span>loubee.</h1>
+      <ul class="hidden md:flex md:gap-10 2xl:text-[16px]">
+        <li class="cursor-pointer text-white"><a href="#home"></a>Home</li>
+        <li class="cursor-pointer text-white"><a href="#tentang-kami">Tentang Kami</a></li>
+        <li class="cursor-pointer text-white"><a href="#donasi">Donasi</a></li>
+        <li class="cursor-pointer text-white"><a href="#zakat">Zakat</a></li>
+        <li class="cursor-pointer text-white"><a href="#faq">Faq</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="py-20">
+    <section id="#home" class="landing-1">
+      <!-- Home Carousel -->
+      <div #swiperRef="" class="swiper mySwiper" data-aos="fade-left" data-aos-duration="1000">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="https://kitabisa.com/_next/image?url=https%3A%2F%2Fimgix.kitabisa.com%2F45542e5a-5ca4-4c17-bbb7-e83cd9b2cf3c.jpg%3Fauto%3Dformat%26fm%3Dpjpg%26ch%3DWidth%2CDPR%2CSave-Data%2CViewport-Width&w=640&q=75"
+              alt="KitaBisa.com">
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://darushsholihin.com/wp-content/uploads/2015/09/Banner-Donasi-Air-Bersih-di-Gunungkidul-Besar.jpg"
+              alt="Darush Sholihin.com">
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://rumaysho.com/wp-content/uploads/2016/03/Banner-Donasi-Selamatkan-Akidah-Gua-Maria-800x451.jpg"
+              alt="Rumaysho.com">
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://paybill.id/cfd/upload/banner-program/paybill-program-banner-1-IJVJZM-1706507180692.jpg?version=202401301147"
+              alt="Donasi.gerakbareng.org">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- Landing Home Donasi -->
+      <div class="flex flex-row justify-between items-center mx-40 py-15 2xl:h-[50vh]">
+        <div class="flex flex-col items-start gap-5">
+          <div>
+            <h3 class="2xl:text-[20px] text-[#2d2d2d] font-normal" data-aos="fade-right" data-aos-duration="1000">Selamat
+              datang di website kami</h3>
+            <h1 class="judul 2xl:text-[40px]" data-aos="fade" data-aos-duration="1500">
+              DONASI BAGI <br> ORANG YANG <br>
+              <span class="text-[#0D9276]" data-aos="fade" data-aos-duration="3000">MEMBUTUHKAN</span>
+            </h1>
+          </div>
+          <p class="text-[#2d2d2d] font-light 2xl:text-[20px] 2xl:w-[530px]" data-aos="fade-left" data-aos-duration="1500">Cloubee
+            menyediakan fitur untuk membuka donasi bagi
+            mereka yang membutuhkan melalui platform yang tersedia dan
+            terpercaya.</p>
+          <button
+            class="btn btn-shadow text-white py-4 px-8 bg-[#0D9276] rounded-2xl cursor-pointer btn-shadow:hover hover:bg-black hover:color-white hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up" data-aos-duration="1000">Bantu Mereka</button>
+        </div>
+        <div class="flex flex-col">
+          <div class="img-1" data-aos="fade-right" data-aos-duration="2000">
+            <img
+              class="rounded-md shadow-sm shadow-black relative top-20 right-[400px] z-10 hover:shadow-xl animation duration-!200"
+              src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2019/11/anak-miskin.jpg" alt="Tokopedia.com"
+              width="405" height="240" data-aos="fade-down" data-aos-duration="1000">
+          </div>
+          <div class="img-2 mb-20" data-aos="fade-left" data-aos-duration="2000">
+            <img
+              class="rounded-md shadow-sm shadow-black relative z-20 right-20 hover:shadow-xl animation h-![200px]"
+              src="https://papuansphoto.files.wordpress.com/2016/08/fb_img_1471855855322.jpg"
+              alt="Papuansphoto.wordpress.com" width="380" data-aos="fade-up" data-aos-duration="1500">
+          </div>
+        </div>
+      </div>
+
+      <!-- Lembaga Donasi -->
+    </section>
+    <section>
+      <center>
+
+        <h1 class="judul 2xl:text-[36px] my-20" data-aos="fade-up" data-aos-duration="1000">Lembaga <span class="text-[#0D9276]" >Donasi</span></h1>
+      </center>
+    </section>
+  </main>
+  <footer></footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script src="app.js"></script>
+</body>
+
+</html>
