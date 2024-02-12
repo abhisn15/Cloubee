@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    content="An advanced online playground for Tailwind CSS that lets you use all of Tailwind's build-time features directly in the browser."
+    name="description">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -17,11 +20,11 @@
 
   <header>
     <nav
-      class="fixed z-20 w-[100%] flex flex-direction-row justify-between items-center 2xl:px-60 2xl:py-6 bg-[#0D9276]">
+      class="fixed z-20 w-[100%] flex flex-direction-row justify-between items-center 2xl:px-60 2xl:py-6 bg-[#0D9276] rounded-bl-2xl rounded-br-2xl">
       <h1 class="logo text-white text-[32px]"><span
           class="bg-gradient-to-t from-[#ffffff] to-[#00FF67] bg-clip-text text-transparent">C</span>loubee.</h1>
       <ul class="hidden md:flex md:gap-10 2xl:text-[16px]">
-        <li class="cursor-pointer text-white"><a href="#home"></a>Home</li>
+        <li class="cursor-pointer text-white"><a href="#">Home</a></li>
         <li class="cursor-pointer text-white"><a href="#tentang-kami">Tentang Kami</a></li>
         <li class="cursor-pointer text-white"><a href="#donasi">Donasi</a></li>
         <li class="cursor-pointer text-white"><a href="#zakat">Zakat</a></li>
@@ -30,10 +33,10 @@
     </nav>
   </header>
 
-  <main class="py-20">
-    <section id="#home" class="landing-1">
+  <main class="pt-20">
+    <section id="#" class="landing-1">
       <!-- Home Carousel -->
-      <div #swiperRef="" class="swiper mySwiper" data-aos="fade-left" data-aos-duration="1000">
+      <div #swiperRef="" class="swiper mySwiper" data-aos="fade-down" data-aos-duration="1000">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img
@@ -65,14 +68,16 @@
       <div class="flex flex-row justify-between items-center mx-40 py-15 2xl:h-[50vh]">
         <div class="flex flex-col items-start gap-5">
           <div>
-            <h3 class="2xl:text-[20px] text-[#2d2d2d] font-normal" data-aos="fade-right" data-aos-duration="1000">Selamat
+            <h3 class="2xl:text-[20px] text-[#2d2d2d] font-normal" data-aos="fade-right" data-aos-duration="1000">
+              Selamat
               datang di website kami</h3>
             <h1 class="judul 2xl:text-[40px]" data-aos="fade" data-aos-duration="1500">
               DONASI BAGI <br> ORANG YANG <br>
               <span class="text-[#0D9276]" data-aos="fade" data-aos-duration="3000">MEMBUTUHKAN</span>
             </h1>
           </div>
-          <p class="text-[#2d2d2d] font-light 2xl:text-[20px] 2xl:w-[530px]" data-aos="fade-left" data-aos-duration="1500">Cloubee
+          <p class="text-[#2d2d2d] font-light 2xl:text-[20px] 2xl:w-[530px]" data-aos="fade-left"
+            data-aos-duration="1500">Cloubee
             menyediakan fitur untuk membuka donasi bagi
             mereka yang membutuhkan melalui platform yang tersedia dan
             terpercaya.</p>
@@ -87,22 +92,76 @@
               src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2019/11/anak-miskin.jpg" alt="Tokopedia.com"
               width="405" height="240" data-aos="fade-down" data-aos-duration="1000">
           </div>
-          <div class="img-2 mb-20" data-aos="fade-left" data-aos-duration="2000">
-            <img
-              class="rounded-md shadow-sm shadow-black relative z-20 right-20 hover:shadow-xl animation h-![200px]"
+          <div class="img-2 mb-20" data-aos="fade-left" data-aos-duration="1500">
+            <img class="rounded-md shadow-sm shadow-black relative z-20 right-20 hover:shadow-xl animation h-![200px]"
               src="https://papuansphoto.files.wordpress.com/2016/08/fb_img_1471855855322.jpg"
-              alt="Papuansphoto.wordpress.com" width="380" data-aos="fade-up" data-aos-duration="1500">
+              alt="Papuansphoto.wordpress.com" width="380">
           </div>
         </div>
       </div>
 
       <!-- Lembaga Donasi -->
     </section>
-    <section>
+    <section class="pb-40">
       <center>
-
-        <h1 class="judul 2xl:text-[36px] my-20" data-aos="fade-up" data-aos-duration="1000">Lembaga <span class="text-[#0D9276]" >Donasi</span></h1>
+        <h1 class="judul 2xl:text-[36px] my-20" data-aos="fade-up" data-aos-duration="1000">Lembaga <span
+            class="text-[#0D9276]">Donasi</span></h1>
       </center>
+
+      <!-- Marquee Animation -->
+      <div id="latest-news" class="marquee">
+        <span style="white-space:nowrap;">
+          <div class="flex flex-row items-center 2xl:gap-[188px]">
+            <a href="https://kitabisa.com" target="_blank" class="flex flex-row items-center gap-10 cursor-pointer">
+              <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="50" height="50">
+              <p>Kitabisa</p>
+            </a>
+            <a href="https://digital.dompetdhuafa.org/" target="_blank"
+              class="flex flex-row items-center gap-10 2xl:w-[350px]">
+              <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="" width="100" height="100">
+              <p>Dompet Dhuafa</p>
+            </a>
+            <a href="https://ayobantu.com" target="_blank" class="flex flex-row items-center gap-10">
+              <img class="rounded-full" src="../assets/img/logo-lembaga/logo-ayobantu.png" alt="Ayobantu.com" width="50"
+                height="50">
+              <p>Ayobantu</p>
+            </a>
+            <a href="https://atapkita.com" target="_blank" class="flex flex-row items-center gap-10">
+              <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="Atapkita.com" width="50" height="50">
+              <p>Atapkita</p>
+            </a>
+            <a href="https://baznas.go.id" target="_blank" class="flex flex-row items-center mr-20">
+              <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas.go.id" width="100" height="100">
+              <p>Baznas</p>
+            </a>
+          </div>
+        </span>
+      </div>
+    </section>
+    <section id="tentang-kami" class="flex flex-row items-center justify-between 2xl:py-26 ">
+      <div class="bg-[#0D9276] 2xl:px-60 2xl:py-60">
+        <h1 class="judul 2xl:text-[36px] text-white" data-aos="fade-up" data-aos-duration="1000"><span class="text-[#1EDB6A]">Tentang </span>Kami</h1>
+        <h3 class="2xl:w-[500px] text-[24px] text-white font-light" data-aos="fade-up" data-aos-duration="1500">Cloubee membantu orang yang ingin berdonasi bagi masyarakat yang membutuhkan
+        </h3>
+        <div class="flex flex-col text-white font-light 2xl:mt-10 gap-5">
+          <div class="flex flex-row items-center gap-2" data-aos="fade-up" data-aos-duration="2000">
+            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30">
+            <p>Membuat penggalangan dana lebih mudah</p>
+          </div>
+          <div class="flex flex-row items-center gap-2" data-aos="fade-up" data-aos-duration="2000">
+            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30">
+            <p>Menghubungkan pengguna langsung ke <br >platform donasi</p>
+          </div>
+          <div class="flex flex-row items-center gap-2" data-aos="fade-up" data-aos-duration="2000">
+            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30">
+            <p>Menginformasikan masyarakat yang <br> membutuhkan
+              bantuan</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col justify-cente items-center 2xl:pr-20" data-aos="fade-left" data-aos-duration="2000">
+        <img src="../assets/img/donasi.svg" alt="donasi">
+      </div>
     </section>
   </main>
   <footer></footer>
