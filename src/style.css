@@ -1,0 +1,132 @@
+@import url("../assets/font/KeplerStdRegular.otf");
+@import url("../assets/font/Poppins-ExtraLight.ttf");
+@import url("../assets/font/RubikMonoOne-Regular.ttf");
+@import url("../assets/font/Rowdies-Light.ttf");
+
+:root {
+  --font-logo: "Kepler Std", sans-serif;
+  --font-judul: "Rubik Mono One", sans-serif;
+  --font-umum: "Poppins", sans-serif;
+  --font-btn: "Rowdies", sans-serif;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-umum);
+}
+
+.judul {
+  font-family: var(--font-judul);
+}
+
+.logo {
+  line-height: 10px;
+  font-family: var(--font-logo);
+}
+
+.btn {
+  font-weight: 600;
+  font-family: var(--font-btn) !important;
+}
+
+.btn-shadow {
+  box-shadow: 12px 10px 10px black;
+  transition: all 0.4s !important;
+}
+
+.btn-shadow:hover {
+  box-shadow: 10px 5px 15px #0d9276 !important;
+  transition: all 0.4s !important;
+}
+
+.swiper {
+  width: 100%;
+  height: 100% !important;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  border-radius: 15px;
+  display: block;
+  width: 1400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.append-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  text-shadow: 5px 2px black;
+}
+
+.img-1 img {
+  position: relative;
+  transition: all 2s !important;
+  animation: mengambang-1 4s infinite ease-in-out !important;
+}
+
+.img-1 img:hover {
+  position: relative;
+  scale: calc(1.1);
+  transition: all 2s !important;
+}
+
+.img-2 img {
+  position: relative;
+  transition: all 2s !important;
+  animation: mengambang-2 4s infinite ease-in-out !important;
+}
+
+.img-2 img:hover {
+  position: relative;
+  scale: calc(1.1);
+  transition: all 2s !important;
+}
+
+@keyframes mengambang-1 {
+  0% {
+    transform: translateY(0%) translateX(0%);
+  }
+  50% {
+    transform: translateY(2%) translateX(2%);
+  }
+  100% {
+    transform: translateY(0%) translateX(0%);
+  }
+}
+
+@keyframes mengambang-2 {
+  0% {
+    transform: translateY(0%) translateX(0%);
+  }
+  50% {
+    transform: translateY(-2%) translateX(-2%);
+  }
+  100% {
+    transform: translateY(0%) translateX(0%);
+  }
+}
