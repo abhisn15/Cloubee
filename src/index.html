@@ -1,336 +1,200 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth overflow-x-hidden">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      content="An advanced online playground for Tailwind CSS that lets you use all of Tailwind's build-time features directly in the browser."
-      name="description"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <title>Cloubee</title>
-  </head>
 
-  <body>
-    <header>
-      <nav
-        class="fixed z-20 w-[100%] flex flex-direction-row justify-between items-center sm:px-10 md:px-20 md:py-4 xl: 2xl:px-60 2xl:py-6 bg-[#0D9276]"
-      >
-        <h1 class="logo text-white text-[32px]">
-          <span
-            class="bg-gradient-to-t from-[#ffffff] to-[#00FF67] bg-clip-text text-transparent"
-            >C</span
-          >loubee.
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    content="An advanced online playground for Tailwind CSS that lets you use all of Tailwind's build-time features directly in the browser."
+    name="description" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <title>Cloubee</title>
+</head>
+
+<body>
+  <header>
+    <nav
+      class="fixed z-20 w-[100%] flex flex-direction-row justify-between items-center sm:px-10 md:px-20 md:py-4 xl: 2xl:px-60 2xl:py-6 bg-[#0D9276]">
+      <h1 class="logo text-white text-[32px]">
+        <span class="bg-gradient-to-t from-[#ffffff] to-[#00FF67] bg-clip-text text-transparent">C</span>loubee.
+      </h1>
+      <ul class="hidden font-bold md:flex md:gap-10 2xl:text-[16px]">
+        <li class="cursor-pointer text-white"><a href="#">Home</a></li>
+        <li class="cursor-pointer text-white">
+          <a href="#tentang-kami">Tentang Kami</a>
+        </li>
+        <li class="cursor-pointer text-white">
+          <a href="#donasi">Donasi</a>
+        </li>
+        <li class="cursor-pointer text-white"><a href="#zakat">Zakat</a></li>
+        <li class="cursor-pointer text-white"><a href="#faq">Faq</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pt-20 bg-white">
+    <section id="#" class="landing-1">
+      <!-- Home Carousel -->
+      <div #swiperRef="" class="swiper mySwiper" data-aos="fade-down" data-aos-duration="1000">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../assets/img/banner-1.avif" alt="KitaBisa.com" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../assets/img/banner-2.avif" alt="Darush Sholihin.com" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../assets/img/banner-3.avif" alt="Rumaysho.com" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../assets/img/banner-4.avif" alt="Donasi.gerakbareng.org" />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- Landing Home Donasi -->
+      <div
+        class="flex flex-column-reverse items-center md:!ml-20 lg:!ml-20 xl:!ml-20 xl:!mr-0 2xl:mx-40 mt-20 py-15 sm:!text-center md:flex-row md:!text-start md:justify-between xl:pt-20 xl:pb-2 2xl:h-[50vh]">
+        <div class="flex flex-col items-start gap-5">
+          <div>
+            <h3 class="lg:tezt-[16px] xl:text-[18px] 2xl:text-[20px] text-[#2d2d2d] font-normal" data-aos="fade-right"
+              data-aos-duration="1000">
+              Selamat datang di website kami
+            </h3>
+            <h1 class="judul lg:text-[28px] xl:text-[32px] 2xl:text-[40px]" data-aos="fade" data-aos-duration="1500">
+              DONASI BAGI <br />
+              ORANG YANG <br />
+              <span class="text-[#0D9276]" data-aos="fade" data-aos-duration="3000">MEMBUTUHKAN</span>
+            </h1>
+          </div>
+          <p class="text-[#2d2d2d] font-light md:w-[300px] lg:w-[350px] xl:w-[400px] 2xl:text-[20px] 2xl:w-[530px]"
+            data-aos="fade-left" data-aos-duration="1500">
+            Cloubee menyediakan fitur untuk membuka donasi bagi mereka yang
+            membutuhkan melalui platform yang tersedia dan terpercaya.
+          </p>
+          <button
+            class="btn btn-shadow font-thin text-white md:py-2 md:px-6 2xl:py-4 2xl:px-8 bg-[#0D9276] rounded-2xl cursor-pointer btn-shadow:hover hover:bg-black hover:color-white hover:scale-105 hover:shadow-xl"
+            data-aos="fade-up" data-aos-duration="1000">
+            Bantu Mereka
+          </button>
+        </div>
+        <div class="flex flex-col md:relative md:right-[100px] lg:right-[50px] xl:right-[-200px] 2xl:right-[0]">
+          <div class="img-1" data-aos="fade-right" data-aos-duration="2000">
+            <img
+              class="rounded-md shadow-sm shadow-black md:relative top-20 md:top-10 md:right-[100px] lg:right-[200px] xl:right-[400px] z-10 hover:shadow-xl animation duration-!200 md:w-[200px] md:h-[100px] lg:w-[280px] lg:h-[150px] xl:w-[380px] xl:h-[200px] 2xl:w-![405px] 2xl:!h-auto"
+              src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2019/11/anak-miskin.jpg" alt="Tokopedia.com"
+              data-aos="fade-down" data-aos-duration="1000" />
+          </div>
+          <div class="img-2 mb-20" data-aos="fade-left" data-aos-duration="1500">
+            <img
+              class="rounded-md shadow-sm shadow-black md:relative z-20 xl:right-40 2xl:!right-20 hover:shadow-xl animation h-![200px] md:w-[200px] md:h-[100px] lg:w-[280px] lg:h-[150px] xl:w-[300px] xl:h-[200px] 2xl:w-[380px] 2xl:h-auto"
+              src="https://papuansphoto.files.wordpress.com/2016/08/fb_img_1471855855322.jpg"
+              alt="Papuansphoto.wordpress.com" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Lembaga Donasi -->
+    <section class="pb-40">
+      <center>
+        <h1 class="judul xl:text-[28px] 2xl:text-[36px] my-20" data-aos="fade-up" data-aos-duration="1000">
+          Lembaga <span class="text-[#0D9276]">Donasi</span>
         </h1>
-        <ul class="hidden font-bold md:flex md:gap-10 2xl:text-[16px]">
-          <li class="cursor-pointer text-white"><a href="#">Home</a></li>
-          <li class="cursor-pointer text-white">
-            <a href="#tentang-kami">Tentang Kami</a>
-          </li>
-          <li class="cursor-pointer text-white">
-            <a href="#donasi">Donasi</a>
-          </li>
-          <li class="cursor-pointer text-white"><a href="#zakat">Zakat</a></li>
-          <li class="cursor-pointer text-white"><a href="#faq">Faq</a></li>
-        </ul>
-      </nav>
-    </header>
+      </center>
 
-    <main class="pt-20 bg-white">
-      <section id="#" class="landing-1">
-        <!-- Home Carousel -->
-        <div
-          #swiperRef=""
-          class="swiper mySwiper"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../assets/img/banner-1.avif" alt="KitaBisa.com" />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="../assets/img/banner-2.avif"
-                alt="Darush Sholihin.com"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img src="../assets/img/banner-3.avif" alt="Rumaysho.com" />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="../assets/img/banner-4.avif"
-                alt="Donasi.gerakbareng.org"
-              />
-            </div>
+      <!-- Marquee Animation -->
+      <div id="latest-news" class="marquee">
+        <span style="white-space: nowrap">
+          <div class="relative left-5 right-14 flex flex-row items-center lg:gap-[30px] xl:gap-[100px] 2xl:gap-[188px]">
+            <a href="https://kitabisa.com" target="_blank"
+              class="relative xl:left-[70px] flex flex-row items-center gap-10 cursor-pointer">
+              <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="50" height="50" />
+              <p class="">Kitabisa</p>
+            </a>
+            <a href="https://digital.dompetdhuafa.org/" target="_blank"
+              class="relative left-5 right-14 flex flex-row items-center gap-10 w-[320px]">
+              <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="" width="100" height="100" />
+              <p class="lg:w-[240px]">Dompet Dhuafa</p>
+            </a>
+            <a href="https://ayobantu.com" target="_blank"
+              class="relative left-0 right-14 flex flex-row items-center gap-10">
+              <img class="rounded-full" src="../assets/img/logo-lembaga/logo-ayobantu.png" alt="Ayobantu.com" width="50"
+                height="50" />
+              <p class="">Ayobantu</p>
+            </a>
+            <a href="https://atapkita.com" target="_blank"
+              class="relative left-5 right-14 flex flex-row items-center gap-10">
+              <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="Atapkita.com" width="50" height="50" />
+              <p class="">Atapkita</p>
+            </a>
+            <a href="https://baznas.go.id" target="_blank"
+              class="relative left-5 right-14 flex flex-row items-center mr-20">
+              <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas.go.id" width="100" height="100" />
+              <p class="">Baznas</p>
+            </a>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-        <!-- Landing Home Donasi -->
-        <div
-          class="flex flex-column-reverse items-center md:!ml-20 lg:!ml-20 xl:!ml-20 xl:!mr-0 2xl:mx-40 py-15 sm:!text-center md:flex-row md:!text-start md:justify-between xl:pt-20 xl:pb-2 2xl:h-[50vh]"
-        >
-          <div class="flex flex-col items-start gap-5">
-            <div>
-              <h3
-                class="lg:tezt-[16px] xl:text-[18px] 2xl:text-[20px] text-[#2d2d2d] font-normal"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              >
-                Selamat datang di website kami
-              </h3>
-              <h1
-                class="judul lg:text-[28px] xl:text-[32px] 2xl:text-[40px]"
-                data-aos="fade"
-                data-aos-duration="1500"
-              >
-                DONASI BAGI <br />
-                ORANG YANG <br />
-                <span
-                  class="text-[#0D9276]"
-                  data-aos="fade"
-                  data-aos-duration="3000"
-                  >MEMBUTUHKAN</span
-                >
-              </h1>
-            </div>
-            <p
-              class="text-[#2d2d2d] font-light md:w-[300px] lg:w-[350px] xl:w-[400px] 2xl:text-[20px] 2xl:w-[530px]"
-              data-aos="fade-left"
-              data-aos-duration="1500"
-            >
-              Cloubee menyediakan fitur untuk membuka donasi bagi mereka yang
-              membutuhkan melalui platform yang tersedia dan terpercaya.
+        </span>
+      </div>
+    </section>
+    <section id="tentang-kami" class="flex flex-row items-center bg-white justify-between 2xl:py-26">
+      <div class="bg-[#0D9276] lg:px-20 lg:py-40 xl:px-20 xl:py-40 2xl:px-60 2xl:py-60">
+        <h1 class="judul lg:text-[24px] xl:text-[28px] 2xl:text-[36px] text-white" data-aos="fade-up"
+          data-aos-duration="1000">
+          <span class="text-[#1EDB6A]">Tentang </span>Kami
+        </h1>
+        <h3 class="2xl:w-[500px] lg:text-[18px] xl:text-[24px] text-white font-light" data-aos="fade-up"
+          data-aos-duration="1500">
+          Cloubee membantu orang yang ingin berdonasi bagi masyarakat yang
+          membutuhkan
+        </h3>
+        <div class="flex flex-col text-white font-light lg:mt-10 xl:mt-10 gap-5">
+          <div class="flex flex-row items-center gap-2" . data-aos="fade-up" data-aos-duration="2000">
+            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30" />
+            <p>Membuat penggalangan dana lebih mudah</p>
+          </div>
+          <div class="flex flex-row items-center gap-2" data-aos="fade-up" data-aos-duration="2000">
+            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30" />
+            <p>Menghubungkan pengguna langsung ke <br />platform donasi</p>
+          </div>
+          <div class="flex flex-row items-center gap-2" data-aos="fade-up" data-aos-duration="2000">
+            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30" />
+            <p>
+              Menginformasikan masyarakat yang <br />
+              membutuhkan bantuan
             </p>
-            <button
-              class="btn btn-shadow font-thin text-white md:py-2 md:px-6 2xl:py-4 2xl:px-8 bg-[#0D9276] rounded-2xl cursor-pointer btn-shadow:hover hover:bg-black hover:color-white hover:scale-105 hover:shadow-xl"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              Bantu Mereka
-            </button>
-          </div>
-          <div
-            class="flex flex-col md:relative md:right-[100px] lg:right-[50px] xl:right-[-200px] 2xl:right-[0]"
-          >
-            <div class="img-1" data-aos="fade-right" data-aos-duration="2000">
-              <img
-                class="rounded-md shadow-sm shadow-black md:relative top-20 md:top-10 md:right-[100px] lg:right-[200px] xl:right-[400px] z-10 hover:shadow-xl animation duration-!200 md:w-[200px] md:h-[100px] lg:w-[280px] lg:h-[150px] xl:w-[380px] xl:h-[200px] 2xl:w-![405px] 2xl:!h-auto"
-                src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2019/11/anak-miskin.jpg"
-                alt="Tokopedia.com"
-                data-aos="fade-down"
-                data-aos-duration="1000"
-              />
-            </div>
-            <div
-              class="img-2 mb-20"
-              data-aos="fade-left"
-              data-aos-duration="1500"
-            >
-              <img
-                class="rounded-md shadow-sm shadow-black md:relative z-20 xl:right-40 2xl:!right-20 hover:shadow-xl animation h-![200px] md:w-[200px] md:h-[100px] lg:w-[280px] lg:h-[150px] xl:w-[300px] xl:h-[200px] 2xl:w-[380px] 2xl:h-auto"
-                src="https://papuansphoto.files.wordpress.com/2016/08/fb_img_1471855855322.jpg"
-                alt="Papuansphoto.wordpress.com"
-              />
-            </div>
           </div>
         </div>
-      </section>
-      <!-- Lembaga Donasi -->
-      <section class="pb-40">
-        <center>
-          <h1
-            class="judul xl:text-[28px] 2xl:text-[36px] my-20"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            Lembaga <span class="text-[#0D9276]">Donasi</span>
-          </h1>
-        </center>
+      </div>
+      <div class="flex flex-col justify-center items-center" data-aos="fade-left" data-aos-duration="2000">
+        <img src="../assets/img/donasi.svg" alt="donasi" />
+      </div>
+    </section>
 
-        <!-- Marquee Animation -->
-        <div id="latest-news" class="marquee">
-          <span style="white-space: nowrap">
-            <div
-              class="relative left-5 right-14 flex flex-row items-center lg:gap-[20px] xl:gap-[100px] 2xl:gap-[188px]"
-            >
-              <a
-                href="https://kitabisa.com"
-                target="_blank"
-                class="relative xl:left-10 flex flex-row items-center gap-10 cursor-pointer"
-              >
-                <img
-                  src="../assets/img/logo-lembaga/logo-kitabisa.png"
-                  alt="Kitabisa.com"
-                  width="50"
-                  height="50"
-                />
-                <p class="">Kitabisa</p>
-              </a>
-              <a
-                href="https://digital.dompetdhuafa.org/"
-                target="_blank"
-                class="relative left-5 right-14 flex flex-row items-center gap-10 w-[320px]"
-              >
-                <img
-                  src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png"
-                  alt=""
-                  width="100"
-                  height="100"
-                />
-                <p class="lg:w-[240px]">Dompet Dhuafa</p>
-              </a>
-              <a
-                href="https://ayobantu.com"
-                target="_blank"
-                class="relative left-0 right-14 flex flex-row items-center gap-10"
-              >
-                <img
-                  class="rounded-full"
-                  src="../assets/img/logo-lembaga/logo-ayobantu.png"
-                  alt="Ayobantu.com"
-                  width="50"
-                  height="50"
-                />
-                <p class="">Ayobantu</p>
-              </a>
-              <a
-                href="https://atapkita.com"
-                target="_blank"
-                class="relative left-5 right-14 flex flex-row items-center gap-10"
-              >
-                <img
-                  src="../assets/img/logo-lembaga/logo-atapkita.png"
-                  alt="Atapkita.com"
-                  width="50"
-                  height="50"
-                />
-                <p class="">Atapkita</p>
-              </a>
-              <a
-                href="https://baznas.go.id"
-                target="_blank"
-                class="relative left-5 right-14 flex flex-row items-center mr-20"
-              >
-                <img
-                  src="../assets/img/logo-lembaga/Logo_BAZNAS.png"
-                  alt="Baznas.go.id"
-                  width="100"
-                  height="100"
-                />
-                <p class="">Baznas</p>
-              </a>
-            </div>
-          </span>
-        </div>
-      </section>
-      <section
-        id="tentang-kami"
-        class="flex flex-row items-center bg-white justify-between 2xl:py-26"
-      >
-        <div
-          class="bg-[#0D9276] lg:px-20 lg:py-40 xl:px-20 xl:py-40 2xl:px-60 2xl:py-60"
-        >
-          <h1
-            class="judul lg:text-[24px] xl:text-[28px] 2xl:text-[36px] text-white"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <span class="text-[#1EDB6A]">Tentang </span>Kami
-          </h1>
-          <h3
-            class="2xl:w-[500px] lg:text-[18px] xl:text-[24px] text-white font-light"
-            data-aos="fade-up"
-            data-aos-duration="1500"
-          >
-            Cloubee membantu orang yang ingin berdonasi bagi masyarakat yang
-            membutuhkan
-          </h3>
-          <div
-            class="flex flex-col text-white font-light lg:mt-10 xl:mt-10 gap-5"
-          >
-            <div
-              class="flex flex-row items-center gap-2"
-              .
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <img
-                src="../assets/img/ceklist.svg"
-                alt="ceklis"
-                width="30"
-                height="30"
-              />
-              <p>Membuat penggalangan dana lebih mudah</p>
-            </div>
-            <div
-              class="flex flex-row items-center gap-2"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <img
-                src="../assets/img/ceklist.svg"
-                alt="ceklis"
-                width="30"
-                height="30"
-              />
-              <p>Menghubungkan pengguna langsung ke <br />platform donasi</p>
-            </div>
-            <div
-              class="flex flex-row items-center gap-2"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <img
-                src="../assets/img/ceklist.svg"
-                alt="ceklis"
-                width="30"
-                height="30"
-              />
-              <p>
-                Menginformasikan masyarakat yang <br />
-                membutuhkan bantuan
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-center items-center 2xl:ml-0 2xl:pr-20"
-          data-aos="fade-left"
-          data-aos-duration="2000"
-        >
-          <img src="../assets/img/donasi.svg" alt="donasi" />
-        </div>
-      </section>
+    <!-- Bantu Mereka -->
+    <section>
+      <div>
+        <h1 class="">Bantu Mereka</h1>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
 
-      <!-- Bantu Mereka -->
-      <section>
-        <div>
-          <h1 class="">Bantu Mereka</h1>
-        </div>
-      </section>
-    </main>
-    <footer></footer>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script src="app.js"></script>
+</body>
 
-    <!-- Initialize Swiper -->
-    <script src="app.js"></script>
-  </body>
 </html>
