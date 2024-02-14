@@ -1,4 +1,4 @@
-AOS.init()
+AOS.init();
 
 var swiper = new Swiper(".mySwiper", {
 	// Hanya satu slide yang ditampilkan pada tampilan mobile
@@ -97,3 +97,38 @@ function rotateMarquee(containers) {
 		rotateMarquee(containers),
 	);
 }
+// Hamburger and Copyright
+const Hamburger = document.getElementById("hamburger");
+const Menu = document.getElementById("menu");
+const Close = document.getElementById("close");
+const List = document.querySelector(".list");
+const List2 = document.querySelector(".list-2");
+const List3 = document.querySelector(".list-3");
+const List4 = document.querySelector(".list-4");
+const List5 = document.querySelector(".list-5");
+// const Copyright = document.getElementById("copyright");
+
+// Copyright.innerHTML = "&copy " + new Date().getFullYear() + " Desain by Abhisn";
+
+Hamburger.addEventListener("click", () => {
+	Menu.classList.toggle("animasi");
+	Menu.classList.add("navbar-normal");
+});
+
+Close.addEventListener("click", () => {
+	Menu.classList.remove("navbar-normal");
+	Menu.classList.toggle("animasi");
+});
+
+List.addEventListener("click", () => {
+	Menu.classList.toggle("animasi");
+});
+List2.addEventListener("click", () => {
+	Menu.classList.toggle("animasi");
+});
+List3.addEventListener("click", () => {
+	Menu.classList.toggle("animasi");
+});
+List4.addEventListener("click", () => {
+	Menu.classList.toggle("animasi");
+});
