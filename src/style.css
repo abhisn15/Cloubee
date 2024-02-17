@@ -1,159 +1,398 @@
-@import url("../assets/font/KeplerStd-Regular.otf");
-@import url("../assets/font/Poppins-ExtraLight.ttf");
-@import url("../assets/font/RubikMonoOne-Regular.ttf");
-@import url("../assets/font/Rowdies-Light.ttf");
+@import url("./assets/font/KeplerStd-Regular.otf");
+@import url("./assets/font/Poppins-ExtraLight.ttf");
+@import url("./assets/font/RubikMonoOne-Regular.ttf");
+@import url("./assets/font/Rowdies-Light.ttf");
+
+@import url("https://fonts.cdnfonts.com/css/kepler-std");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+@import url("https://fonts.cdnfonts.com/css/rubik-mono-one");
+@import url("https://fonts.cdnfonts.com/css/rowdies");
 
 :root {
-	--font-logo: "Kepler Std", sans-serif;
-	--font-judul: "Rubik Mono One", sans-serif;
-	--font-umum: "Poppins", sans-serif;
-	--font-btn: "Rowdies", sans-serif;
+  --font-logo: "Kepler Std", sans-serif;
+  --font-judul: "Rubik Mono One", sans-serif;
+  --font-umum: "Poppins", sans-serif;
+  --font-btn: "Rowdies", sans-serif;
 }
 
 html {
-	padding: 0;
-	margin: 0;
-	scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-	font-family: var(--font-umum);
+  overflow-x: hidden;
+  font-family: var(--font-umum);
 }
 
 .judul {
-	font-family: var(--font-judul);
+  font-family: var(--font-judul);
 }
 
 .logo {
-	line-height: 10px;
-	font-family: var(--font-logo);
+  line-height: 10px;
+  font-family: var(--font-logo);
 }
 
 .btn {
-	font-weight: 600;
-	font-family: var(--font-btn) !important;
+  font-weight: 600;
+  font-family: var(--font-btn) !important;
+}
+
+.navbar-nav > .active > a {
+  color: rgb(255, 255, 255);
+}
+.nav-item > a:hover {
+  color: rgba(255, 255, 255, 0.793);
 }
 
 .btn-shadow {
-	box-shadow: 12px 10px 10px black;
-	transition: all 0.4s !important;
+  box-shadow: 12px 10px 10px black;
+  transition: all 0.4s !important;
 }
 
 .btn-shadow:hover {
-	box-shadow: 10px 5px 15px #0d9276 !important;
-	transition: all 0.4s !important;
+  box-shadow: 10px 5px 15px #0d9276 !important;
+  transition: all 0.4s !important;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	left: -75px;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 230px;
+	padding: 30px 16px;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	left: -75px;
+	display: block;
+  transition: all 2s;
+	animation: dropdown 0.4s ease-in;
+}
+
+nav ul li a {
+	text-decoration: none;
+	position: relative;
+}
+
+nav ul li a::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 0;
+	height: 2px;
+	background-color: rgb(255, 255, 255);
+	transform: scaleX(0);
+	transform-origin: bottom right;
+	transition: transform 0.4s ease;
+}
+
+nav ul li a:hover::before {
+	width: 100%;
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+nav ul li a:not(:hover)::before {
+	width: 0;
+	transform-origin: bottom right;
+}
+
+@keyframes dropdown {
+	0% {
+		opacity: 0;
+		transform: translateY(-30%);
+	}
+	90% {
+		opacity: 0.5;
+		transform: translateY(2%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
 }
 
 .swiper {
-	width: 100%;
-	height: 100% !important;
+  width: 100%;
+  height: 100% !important;
 }
 
 .swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	background: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-	border-radius: 15px;
-	display: block;
-	width: 1400px;
-	height: 300px;
-	object-fit: cover;
+  border-radius: 15px;
+  display: block;
+  width: 1400px;
+  height: 300px;
+  object-fit: cover;
 }
 
 .swiper {
-	width: 100%;
-	height: 300px;
-	margin: 20px auto;
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
 }
 
 .append-buttons {
-	text-align: center;
-	margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-	color: white !important;
-	text-shadow: 5px 2px black;
+  color: white !important;
+  text-shadow: 5px 2px black;
 }
 
 .img-1 img {
-	position: relative;
-	transition: all 2s !important;
-	animation: mengambang-1 4s infinite ease-in-out !important;
+  position: relative;
+  transition: all 2s !important;
+  animation: mengambang-1 4s infinite ease-in-out !important;
 }
 
 .img-1 img:hover {
-	position: relative;
-	scale: calc(1.1);
-	transition: all 2s !important;
+  position: relative;
+  scale: calc(1.1);
+  transition: all 2s !important;
 }
 
 .img-2 img {
-	position: relative;
-	transition: all 2s !important;
-	animation: mengambang-2 4s infinite ease-in-out !important;
+  position: relative;
+  transition: all 2s !important;
+  animation: mengambang-2 4s infinite ease-in-out !important;
 }
 
 .img-2 img:hover {
-	position: relative;
-	scale: calc(1.1);
-	transition: all 2s !important;
+  position: relative;
+  scale: calc(1.1);
+  transition: all 2s !important;
 }
 
 @keyframes mengambang-1 {
-	0% {
-		transform: translateY(0%) translateX(0%);
-	}
-	50% {
-		transform: translateY(2%) translateX(2%);
-	}
-	100% {
-		transform: translateY(0%) translateX(0%);
-	}
+  0% {
+    transform: translateY(0%) translateX(0%);
+  }
+  50% {
+    transform: translateY(2%) translateX(2%);
+  }
+  100% {
+    transform: translateY(0%) translateX(0%);
+  }
 }
 
 @keyframes mengambang-2 {
-	0% {
-		transform: translateY(0%) translateX(0%);
-	}
-	50% {
-		transform: translateY(-2%) translateX(-2%);
-	}
-	100% {
-		transform: translateY(0%) translateX(0%);
-	}
+  0% {
+    transform: translateY(0%) translateX(0%);
+  }
+  50% {
+    transform: translateY(-2%) translateX(-2%);
+  }
+  100% {
+    transform: translateY(0%) translateX(0%);
+  }
+}
+
+@keyframes mengambang-3 {
+  0% {
+    transform: translateY(0%) translateX(0%);
+  }
+  50% {
+    transform: translateY(10%) translateX(10%);
+  }
+  100% {
+    transform: translateY(0%) translateX(0%);
+  }
+}
+
+@keyframes mengambang-4 {
+  0% {
+    transform: translateY(0%) translateX(0%);
+  }
+  50% {
+    transform: translateY(10%) translateX(-10%);
+  }
+  100% {
+    transform: translateY(0%) translateX(0%);
+  }
 }
 
 .animasi {
-	transform: translateY(-100%);
-	animation: navbar-reverse 1s ease-in-out !important;
+  transform: translateY(-100%);
+  animation: navbar-reverse 1s ease-in-out !important;
 }
 
 .navbar-normal {
-	animation: navbar 1s ease-in-out;
+  animation: navbar 1s ease-in-out;
 }
 
 @keyframes navbar {
-	from {
-		transform: translateY(-100%);
-	}
-	to {
-		transform: translateY(0%);
-	}
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 @keyframes navbar-reverse {
-	from {
-		transform: translateY(0%);
-	}
-	to {
-		transform: translateY(-100%);
-	}
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.panahKiri {
+  transition: all 2s;
+  animation: mengambang-3 4s infinite ease-in-out !important;
+}
+
+.panahKanan {
+  transition: all 2s;
+  animation: mengambang-4 4s infinite ease-in-out !important;
+}
+
+.bubble-1 {
+  transition: all 2s;
+  animation: mengambang-3 4s infinite ease-in-out !important;
+}
+
+.bubble-2 {
+  transition: all 2s;
+  animation: mengambang-4 4s infinite ease-in-out !important;
+}
+
+.answer {
+  animation: navbar 1s ease-in-out;
+}
+
+.answer-hidden1 {
+  transform: translateY(-100%);
+  animation: navbar-reverse 1s ease-in-out !important;
+}
+
+.extra-desk-masjid {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-pengobatan-kanker {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-sedekah {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-kesembuhan {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-bantu-dengar {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-bantu-difabel {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-rekomendasi1 {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-rekomendasi2 {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-rekomendasi3 {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-rekomendasi1-mobile {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-rekomendasi2-mobile {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-rekomendasi3-mobile {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-zakat-maal {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.extra-desk-zakat-penghasilan {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.faq-1 {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.faq-2 {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.faq-3 {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+.faq-4 {
+  opacity: 1;
+  animation: desk-animation alternate .4s ease-in;
+}
+
+@keyframes desk-animation {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }

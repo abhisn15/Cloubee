@@ -1,59 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth w-full overflow-x-hidden">
+<html lang="en" class="scroll-smooth ">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
-    content="An advanced online playground for Tailwind CSS that lets you use all of Tailwind's build-time features directly in the browser."
+    content="Website yang mengutamakan sebuah informasi mengenai penggalangan dana berupa bantuan donasi masyarakat yang membutuhkan serta membayar zakat."
     name="description" />
+  <link rel="icon" href="assets/img/favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <title>Cloubee</title>
 </head>
 
 <body>
   <header class="hidden md:block">
     <nav
-      class=" fixed z-20 w-[100%] flex flex-direction-row justify-between items-center sm:px-10 md:px-20 md:py-4 xl: 2xl:px-60 2xl:py-6 bg-[#0D9276]">
+      class=" fixed z-40 w-[100%] flex flex-direction-row justify-between items-center sm:px-10 md:px-20 md:py-4 xl: 2xl:px-60 2xl:py-6 bg-[#0D9276]">
       <h1 class="logo text-white text-[32px]">
         <span class="bg-gradient-to-t from-[#ffffff] to-[#00FF67] bg-clip-text text-transparent">C</span>loubee.
       </h1>
-      <ul class="hidden font-bold md:flex md:gap-10 2xl:text-[16px]">
-        <li class="cursor-pointer text-white"><a href="#">Home</a></li>
+      <ul class="hidden font-medium md:flex md:gap-10 2xl:text-[16px] ">
+        <li class="cursor-pointer text-white"><a href="#"
+            class="link text-[rgba(255,255,255,60%)] border-b-[2px]">Home</a></li>
         <li class="cursor-pointer text-white">
-          <a href="#tentang-kami">Tentang Kami</a>
+          <a href="#tentang-kami" class="link">Tentang Kami</a>
         </li>
-        <li class="cursor-pointer text-white">
-          <a href="#donasi">Donasi</a>
-        </li>
-        <li class="cursor-pointer text-white"><a href="#zakat">Zakat</a></li>
-        <li class="cursor-pointer text-white"><a href="#faq">Faq</a></li>
+        <div class="dropdown">
+          <li class="cursor-pointer text-white">
+            <p class="cursor-pointer">Donasi</p>
+          </li>
+          <div class="dropdown-content bg-[#0D9276]">
+            <li class="cursor-pointer text-white mb-2">
+              <a href="#donasi" class="link">Bantu Mereka</a>
+            </li>
+            <li class="cursor-pointer text-white">
+              <a href="#rekomendasi-bantuan" class="link">Rekomendasi Bantuan</a>
+            </li>
+          </div>
+        </div>
+        <li class="cursor-pointer text-white"><a href="#zakat" class="link">Zakat</a></li>
+        <li class="cursor-pointer text-white"><a href="#faq" class="link">Faq</a></li>
       </ul>
     </nav>
   </header>
-  <header class="md:hidden">
-    <nav
-      class="fixed z-20 w-[100%] flex flex-wrap justify-between items-center px-10 py-5 bg-[#0D9276]">
-      <h1 class="logo text-white text-[32px]">
+  <header class=" md:hidden">
+    <nav class="fixed z-40 w-[100%] flex flex-wrap justify-between items-center px-10 py-5 bg-[#0D9276]">
+      <h1 class="logo text-white text-[24px]">
         <span class="bg-gradient-to-t from-[#ffffff] to-[#00FF67] bg-clip-text text-transparent">C</span>loubee.
       </h1>
       <img src="../assets/img/hamburger.svg" id="hamburger" alt="hamburger" class="cursor-pointer md:hidden">
       <ul id="menu"
-        class="animasi flex flex-col justify-center items-center w-full h-[140dvh] font-bold  absolute top-0 bottom-0 left-0 bg-[#0D9276] gap-10 z-40">
-        <li class="list cursor-pointer text-white"><a href="#">Home</a></li>
+        class="animasi flex flex-col justify-center items-center w-full h-[100dvh] font-bold  absolute top-0 bottom-0 left-0 bg-[#0D9276] gap-10 z-40">
+        <li class="cursor-pointer text-white list"><a href="#"
+            class="link text-[rgba(255,255,255,60%)] border-b-[2px]">Home</a></li>
         <li class="list-2 cursor-pointer text-white">
-          <a href="#tentang-kami">Tentang Kami</a>
+          <a href="#tentang-kami" class="link">Tentang Kami</a>
         </li>
-        <li class="list-3 cursor-pointer text-white">
-          <a href="#donasi">Donasi</a>
-        </li>
-        <li class="list-4 cursor-pointer text-white"><a href="#zakat">Zakat</a></li>
-        <li class="list-5 cursor-pointer text-white"><a href="#faq">Faq</a></li>
+        <div class="flex flex-col items-center">
+          <li class="list-dropdown cursor-pointer text-white flex flex-row gap-10 items-center">
+            <p href="#donasi" class="text-center">Donasi</p> <svg width="12" height="11"
+              viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.657075 10.3897L0.595119 6.14218L5.89424 0.832324L11.346 5.98536L11.4079 10.2329L5.95585 5.05587L0.657075 10.3897Z"
+                fill="white" />
+            </svg>
+          </li>
+          <div class="dropdown-content-mobile text-center flex flex-col gap-2 py-5 hidden">
+            <li><a href="#donasi" class="list-3 link text-white">Bantu Mereka</a></li>
+            <li><a href="#rekomendasi-bantuan" class="list-4 link text-white">Rekomendasi Bantuan</a></li>
+          </div>
+        </div>
+        <li class="list-5 cursor-pointer text-white"><a href="#zakat" class="link">Zakat</a></li>
+        <li class="list-6 cursor-pointer text-white"><a href="#faq" class="link">Faq</a></li>
         <h1 class="logo absolute top-7 left-10 text-white text-[32px]">
           <span class="bg-gradient-to-t from-[#ffffff] to-[#00FF67] bg-clip-text text-transparent">C</span>loubee.
         </h1>
@@ -65,19 +90,32 @@
   <main class="pt-20 bg-white">
     <section id="#" class="landing-1">
       <!-- Home Carousel -->
-      <div #swiperRef="" class="swiper mySwiper" data-aos="fade-down" data-aos-duration="1000">
+      <div id="swiperRef" class="swiper mySwiper w-[100%]" data-aos="fade-down" data-aos-duration="1000">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="../assets/img/banner-1.avif" alt="KitaBisa.com" />
+            <img src="../assets/img/home/banner/banner-1.avif" alt="KitaBisa.com" class="!rounded-md md:!rounded-xl"/>
+            <p class="absolute bottom-0 w-full z-20 text-[14px] text-white bg-black px-4 py-2 rounded-br-xl rounded-bl-xl text-start">Sumber:
+              https://kitabisa.com/campaign/bantuan<br>kacamatauntukdhuafa</p>
           </div>
           <div class="swiper-slide">
-            <img src="../assets/img/banner-2.avif" alt="Darush Sholihin.com" />
+            <img src="../assets/img/home/banner/banner-2.avif" alt="Darush Sholihin.com" class="!rounded-md md:!rounded-xl"/>
+            <p class="absolute bottom-0 w-full z-20 text-[14px] text-white bg-black px-4 py-2 rounded-br-xl rounded-bl-xl text-start">Sumber:
+              https://darushsholihin.com/2415-misi-awal-september-penyaluran-air-bersih-atasi-kristenisasi.html/banner-donasi-air-bersih-di-gunungkidul-besar
+            </p>
+
           </div>
           <div class="swiper-slide">
-            <img src="../assets/img/banner-3.avif" alt="Rumaysho.com" />
+            <img src="../assets/img/home/banner/banner-3.avif" alt="Rumaysho.com" class="!rounded-md md:!rounded-xl"/>
+            <p class="absolute bottom-0 w-full z-20 text-[14px] text-white bg-black px-4 py-2 rounded-br-xl rounded-bl-xl text-start">Sumber:
+              https://rumaysho.com/13124-darurat-selamatkan-saudara-kita-butuh-7-hari-donasi.html/banner-donasi-selamatkan-akidah-gua-maria-800x451
+            </p>
+
           </div>
           <div class="swiper-slide">
-            <img src="../assets/img/banner-4.avif" alt="Donasi.gerakbareng.org" />
+            <img src="../assets/img/home/banner/banner-4.avif" alt="Donasi.gerakbareng.org" class="!rounded-md md:!rounded-xl"/>
+            <p class="absolute bottom-0 w-full z-20 text-[14px] text-white bg-black px-4 py-2 rounded-br-xl rounded-bl-xl text-start">Sumber:
+              https://donasi.gerakbareng.org/donasi/sedekah<br>menolakmusibah</p>
+
           </div>
         </div>
         <div class="swiper-button-next"></div>
@@ -102,7 +140,7 @@
               <span class="text-[#0D9276]" data-aos="fade" data-aos-duration="3000">MEMBUTUHKAN</span>
             </h1>
             <div class="flex flex-col items-center">
-              <h1 class="judul w-[60%] text-[24px] md:hidden" data-aos="fade" data-aos-duration="1500">
+              <h1 class="judul w-[60%] text-[20px] md:hidden" data-aos="fade" data-aos-duration="1500">
                 DONASI BAGI
                 ORANG YANG <br>
                 <span class="text-[#0D9276]" data-aos="fade" data-aos-duration="3000">MEMBUTUHKAN</span>
@@ -110,14 +148,20 @@
             </div>
           </div>
           <div class="flex justify-center text-[14px]">
-            <p class="text-[#2d2d2d] text-[14px] w-[80%] font-light md:w-[300px] lg:w-[350px] xl:w-[400px] md:text-[14px] 2xl:text-[20px] 2xl:w-[530px]"
+            <p class="hidden md:block text-[#2d2d2d] text-[14px] w-[80%] font-light md:w-[300px] lg:w-[350px] xl:w-[400px] md:text-[14px] 2xl:text-[20px] 2xl:w-[530px]"
               data-aos="fade-left" data-aos-duration="1500">
+              Cloubee menyediakan fitur untuk membuka donasi bagi mereka yang
+              membutuhkan melalui platform yang tersedia dan terpercaya.
+            </p>
+            <p class="md:hidden text-[#2d2d2d] text-[14px] w-[80%] font-light md:w-[300px] lg:w-[350px] xl:w-[400px] md:text-[14px] 2xl:text-[20px] 2xl:w-[530px]"
+              data-aos="fade-up" data-aos-duration="1500">
               Cloubee menyediakan fitur untuk membuka donasi bagi mereka yang
               membutuhkan melalui platform yang tersedia dan terpercaya.
             </p>
           </div>
           <div class="hidden md:block">
             <button
+            onclick="location.href = '#donasi'"
               class="btn btn-shadow font-thin text-white md:py-2 md:px-6 2xl:py-4 2xl:px-8 bg-[#0D9276] rounded-2xl cursor-pointer btn-shadow:hover hover:bg-black hover:color-white hover:scale-105 hover:shadow-xl"
               data-aos="fade-up" data-aos-duration="1000">
               Bantu Mereka
@@ -125,6 +169,7 @@
           </div>
           <div>
             <button
+            onclick="location.href = '#donasi'"
               class="md:hidden w-[80%] btn btn-shadow font-thin text-white py-2 md:py-2 md:px-6 2xl:py-4 2xl:px-8 bg-[#0D9276] rounded-2xl cursor-pointer btn-shadow:hover hover:bg-black hover:color-white hover:scale-105 hover:shadow-xl"
               data-aos="fade-up" data-aos-duration="1000">
               Bantu Mereka
@@ -132,81 +177,116 @@
           </div>
         </div>
         <div
-          class="flex flex-col items-center w-full relative right-20 md:right-[-50px] lg:right-[200px] xl:right-[-200px] 2xl:right-[-380px]">
-          <div class="img-1" data-aos="fade-right" data-aos-duration="2000">
+          class="flex flex-col items-center w-full relative right-20 max-[360px]:right-[30px] max-[400px]:right-[20px] md:right-[-50px] lg:right-[200px] xl:right-[-200px] 2xl:right-[-380px]">
+          <div class="img-1 hidden md:block" data-aos="fade-right" data-aos-duration="2000">
+            <p
+              class="hidden md:block absolute text-center text-[12px] lg:left-32 xl:-left-[150px] 2xl:pt-0 2xl:-left-80">
+              Sumber:
+              https://papuansphoto.files.wordpress.com/</p>
             <img
-              class="rounded-md shadow-sm shadow-black w-[300px] h-[150px] relative top-10 lg:right-[-100px] md:top-10 md:right-[150px] xl:right-[200px] 2xl:right-[400px] z-10 hover:shadow-xl animation duration-!200 md:w-[250px] md:h-[120px] lg:w-[280px] lg:h-[150px] xl:w-[380px] xl:h-[200px] 2xl:w-![405px] 2xl:!h-auto"
-              src="https://images.tokopedia.net/blog-tokopedia-com/uploads/2019/11/anak-miskin.jpg" alt="Tokopedia.com"
-              data-aos="fade-down" data-aos-duration="1000" />
+              class="rounded-md shadow-sm shadow-black w-[220px] h-[120px] max-[360px]:w-[150px] max-[360px]:h-[100px] relative top-10 lg:right-[-100px] md:top-10 md:right-[150px] xl:right-[200px] 2xl:right-[400px] z-10 hover:shadow-xl animation duration-!200 md:w-[250px] md:h-[120px] lg:w-[280px] lg:h-[150px] xl:w-[380px] xl:h-[200px] 2xl:w-![405px] 2xl:!h-auto"
+              src="../assets/img/home/intro/anak-miskin.jpg" alt="Tokopedia.com" data-aos="fade-down"
+              data-aos-duration="1000" />
           </div>
-          <div class="img-2 mb-20" data-aos="fade-left" data-aos-duration="1500">
+          <div class="img-2 mb-20 hidden md:block text-center" data-aos="fade-left" data-aos-duration="1500">
             <img
-              class="rounded-md shadow-sm shadow-black w-[300px] h-[160px] left-[200px] relative z-20 md:left-0 md:-right-12 lg:left-[300px] xl:left-[0px] 2xl:-left-20 hover:shadow-xl animation md:w-[250px] md:h-[130px] lg:w-[280px] lg:h-[150px] xl:w-[300px] xl:h-[200px] 2xl:w-[380px] 2xl:h-[220px]"
-              src="https://papuansphoto.files.wordpress.com/2016/08/fb_img_1471855855322.jpg"
-              alt="Papuansphoto.wordpress.com" />
+              class="rounded-md shadow-sm shadow-black w-[200px] max-[360px]:w-[150px] max-[360px]:h-[100px] max-[360px]:left-[80px] h-[140px] left-[200px] relative z-20 md:left-0 md:-right-12 lg:left-[300px] xl:left-[0px] 2xl:-left-20 hover:shadow-xl animation md:w-[250px] md:h-[130px] lg:w-[280px] lg:h-[150px] xl:w-[300px] xl:h-[200px] 2xl:w-[380px] 2xl:h-[220px]"
+              src="../assets/img/home/intro/anak-membutuhkan.jpg" alt="Papuansphoto.wordpress.com" />
+            <p class="absolute text-center text-[12px] xl:ml-0 lg:ml-80">Sumber:
+              https://papuansphoto.files.wordpress.com/</p>
+          </div>
+          <div class="img-1 md:hidden" data-aos="fade-down" data-aos-duration="2000">
+            <p class="absolute text-center text-[12px] ml-20 max-[400px]:ml-5 max-[500px]:text-[10px]">Sumber:
+              https://papuansphoto.files.wordpress.com</p>
+            <img
+              class="rounded-md shadow-sm shadow-black w-[220px] h-[120px] max-[400px]:w-[200px] max-[400px]:h-[120px] relative top-10 lg:right-[-100px] md:top-10 md:right-[150px] xl:right-[200px] 2xl:right-[400px] z-10 hover:shadow-xl animation duration-!200 md:w-[250px] md:h-[120px] lg:w-[280px] lg:h-[150px] xl:w-[380px] xl:h-[200px] 2xl:w-![405px] 2xl:!h-auto"
+              src="../assets/img/home/intro/anak-miskin.jpg" alt="Tokopedia.com" data-aos="fade-down"
+              data-aos-duration="1000" />
+          </div>
+          <div class="img-2 mb-20 md:hidden" data-aos="fade-up" data-aos-duration="1500">
+            <img
+              class="rounded-md shadow-sm shadow-black w-[200px] max-[400px]:w-[180px] max-[400px]:h-[120px] max-[400px]:left-[80px] h-[140px] left-[200px] relative z-20 md:left-0 md:-right-12 lg:left-[300px] xl:left-[0px] 2xl:-left-20 hover:shadow-xl animation md:w-[250px] md:h-[130px] lg:w-[280px] lg:h-[150px] xl:w-[300px] xl:h-[200px] 2xl:w-[380px] 2xl:h-[220px]"
+              src="../assets/img/home/intro/anak-membutuhkan.jpg" alt="Papuansphoto.wordpress.com" />
+            <p class="absolute text-center text-[12px] ml-40 max-[400px]:ml-5 max-[500px]:text-[10px]">Sumber:
+              https://papuansphoto.files.wordpress.com</p>
           </div>
         </div>
       </div>
     </section>
     <!-- Lembaga Donasi -->
-    <section class="pb-40">
-      <center>
-        <h1 class="judul text-[20px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[36px] my-20"
-          data-aos="fade-up" data-aos-duration="1000">
-          Lembaga <span class="text-[#0D9276]">Donasi</span>
-        </h1>
-      </center>
+    <center>
+      <h1 class="judul text-[20px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[36px] my-20"
+        data-aos="fade-up" data-aos-duration="1000">
+        Lembaga <span class="text-[#0D9276]">Donasi</span>
+      </h1>
+    </center>
 
-      <!-- Marquee Animation -->
-      <div id="latest-news" class="marquee">
-        <span style="white-space: nowrap">
-          <div
-            class="flex flex-row items-center gap-20 md:text-[12px] lg:text-[14px] lg:!gap-[30px] xl:!gap-[100px] 2xl:gap-[188px]">
-            <a href="https://kitabisa.com" target="_blank"
-              class="flex flex-col text-center items-center gap-3 cursor-pointer justify-center ml-20 lg:ml-0 lg:flex-row">
-              <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="50" height="50"
-                class="hidden lg:block" />
-              <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="200" height="200"
-                class="lg:hidden" />
-              <p class="hidden lg:block">Kitabisa</p>
-            </a>
-            <a href="https://digital.dompetdhuafa.org/" target="_blank"
-              class=" flex flex-col text-center items-center gap-9 justify-center lg:flex-row">
-              <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="" width="100" height="100"
-                class="hidden lg:block" />
-              <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="digital.dompetdhuafa.org" width="400"
-                height="400" class="lg:hidden" />
-              <p class="hidden lg:block lg:w-[120px]">Dompet Dhuafa</p>
-            </a>
-            <a href="https://ayobantu.com" target="_blank"
-              class="flex flex-col text-center justify-center items-center gap-7 lg:flex-row">
-              <img class="hidden rounded-full lg:block" src="../assets/img/logo-lembaga/logo-ayobantu.png"
-                alt="Ayobantu.com" width="50" height="50" />
-              <img class="lg:hidden" src="../assets/img/logo-lembaga/mobile/Ayobantu.png" alt="Ayobantu.com" width="400"
-                height="400" />
-              <p class="hidden lg:block">Ayobantu</p>
-            </a>
-            <a href="https://atapkita.com" target="_blank"
-              class="flex flex-col text-center justify-center items-center gap-9 lg:flex-row">
-              <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="Atapkita.com" width="50" height="50"
-                class="hidden lg:block" />
-              <img src="../assets/img/logo-lembaga/mobile/atapkita.png" alt="Atapkita.com" width="500" height="500"
-                class="lg:hidden" />
-              <p class="hidden lg:block">Atapkita</p>
-            </a>
-            <a href="https://baznas.go.id" target="_blank"
-              class="flex flex-col text-center justify-center items-center lg:mr-20 lg:flex-row">
-              <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas.go.id" width="100" height="100"
-                class="hidden md:block" />
-              <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas.go.id" width="400" height="400"
-                class="md:hidden" />
-              <p class="hidden lg:block">Baznas</p>
-            </a>
-          </div>
-        </span>
-      </div>
-    </section>
-    <section id="tentang-kami" class="flex flex-row items-center bg-white 2xl:py-26">
+    <!-- Marquee Animation -->
+    <div id="latest-news" class="marquee w-auto overflow-x-hidden">
+      <span style="white-space: nowrap" class="w-[800px] md:w-auto">
+        <div class="md:flex flex-row items-center hidden md:gap-20">
+          <a href="https://kitabisa.com" target="_blank"
+            class="flex text-center items-center gap-3 cursor-pointer justify-center md:ml-20 lg:ml-0 lg:flex-row">
+            <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="50" height="50"
+              class="hidden lg:block" />
+            <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="100" height="100"
+              class="hidden md:block lg:hidden" />
+            <p class="hidden lg:block border-b-[2px] border-blue-300">Kitabisa</p>
+          </a>
+          <a href="https://digital.dompetdhuafa.org/" target="_blank"
+            class=" flex text-center items-center gap-9 justify-center lg:flex-row">
+            <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="" width="100" height="100"
+              class="hidden lg:block" />
+            <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="digital.dompetdhuafa.org" width="200"
+              height="200" class="hidden md:block lg:hidden" />
+            <p class="hidden lg:block xl:w-[140px] border-b-[2px] border-blue-300">Dompet Dhuafa</p>
+          </a>
+          <a href="https://ayobantu.com" target="_blank"
+            class="flex text-center justify-center items-center gap-7 lg:flex-row">
+            <img class="hidden rounded-full lg:block" src="../assets/img/logo-lembaga/logo-ayobantu.png"
+              alt="Ayobantu.com" width="50" height="50" />
+            <img class="hidden md:block lg:hidden" src="../assets/img/logo-lembaga/mobile/Ayobantu.png"
+              alt="Ayobantu.com" width="200" height="200" />
+            <p class="hidden lg:block border-b-[2px] border-blue-300">Ayobantu</p>
+          </a>
+          <a href="https://atapkita.com" target="_blank"
+            class="flex text-center justify-center items-center gap-9 lg:flex-row">
+            <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="Atapkita.com" width="50" height="50"
+              class="hidden lg:block" />
+            <img src="../assets/img/logo-lembaga/mobile/atapkita.png" alt="Atapkita.com" width="200" height="200"
+              class="hidden md:block lg:hidden" />
+            <p class="hidden lg:block border-b-[2px] border-blue-300">Atapkita</p>
+          </a>
+          <a href="https://baznas.go.id" target="_blank"
+            class="flex text-center justify-center items-center lg:flex-row lg:pr-20 xl:pr-0">
+            <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas.go.id" width="100" height="100"
+              class="hidden lg:block" />
+            <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas.go.id" width="200" height="200"
+              class="hidden md:block lg:hidden" />
+            <p class="hidden lg:block border-b-[2px] border-blue-300">Baznas</p>
+          </a>
+        </div>
+      </span>
+    </div>
+    <div class="flex justify-center flex-wrap md:hidden gap-10 mx-10">
+      <a href="https://kitabisa.com" target="_blank" class="flex text-center items-center  cursor-pointer">
+        <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="50" height="50" />
+      </a>
+      <a href="https://digital.dompetdhuafa.org/" target="_blank" class=" flex text-center items-center justify-center">
+        <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="" width="100" height="100" />
+      </a>
+      <a href="https://ayobantu.com" target="_blank" class="flex text-center justify-center items-center gap-7">
+        <img src="../assets/img/logo-lembaga/mobile/Ayobantu.png" alt="Ayobantu.com" width="100" height="100" />
+      </a>
+      <a href="https://atapkita.com" target="_blank" class="flex text-center justify-center items-center ">
+        <img src="../assets/img/logo-lembaga/mobile/atapkita.png" alt="Atapkita.com" width="100" height="100" />
+      </a>
+      <a href="https://baznas.go.id" target="_blank" class="flex text-center justify-center items-center ">
+        <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas.go.id" width="100" height="100" />
+      </a>
+    </div>
+    <!-- Tentang Kami -->
+    <section id="tentang-kami" class="flex flex-row items-center bg-white pt-40 2xl:py-26">
       <div
         class="bg-[#0D9276] md:px-20 md:py-40 lg:px-20 lg:py-40 xl:px-20 xl:py-40 2xl:px-60 2xl:py-60 hidden md:block">
         <h1 class="judul md:text-[20px] lg:text-[24px] xl:text-[28px] 2xl:text-[36px] text-white" data-aos="fade-up"
@@ -220,15 +300,15 @@
         </h3>
         <div class="flex flex-col text-white font-light md:text-[14px] md:mt-5 lg:mt-10 xl:mt-10 gap-5 ">
           <div class="flex flex-row items-center gap-2" . data-aos="fade-up" data-aos-duration="2000">
-            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30" />
+            <img src="../assets/img/tentang-kami/ceklist.svg" alt="ceklis" width="30" height="30" />
             <p>Membuat penggalangan dana lebih mudah</p>
           </div>
           <div class="flex flex-row items-center gap-2" data-aos="fade-up" data-aos-duration="2000">
-            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30" />
+            <img src="../assets/img/tentang-kami/ceklist.svg" alt="ceklis" width="30" height="30" />
             <p>Menghubungkan pengguna langsung ke <br />platform donasi</p>
           </div>
           <div class="flex flex-row items-center gap-2" data-aos="fade-up" data-aos-duration="2000">
-            <img src="../assets/img/ceklist.svg" alt="ceklis" width="30" height="30" />
+            <img src="../assets/img/tentang-kami/ceklist.svg" alt="ceklis" width="30" height="30" />
             <p>
               Menginformasikan masyarakat yang <br />
               membutuhkan bantuan
@@ -236,36 +316,40 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col justify-center items-center 2xl:w-[1500px] hidden md:block" data-aos="fade-left"
+      <div class="flex flex-col justify-center items-center items-center hidden md:block" data-aos="fade-left"
         data-aos-duration="2000">
-        <img src="../assets/img/donasi.svg" alt="donasi" />
+        <img src="../assets/img/tentang-kami/donasi.svg" alt="donasi" />
       </div>
     </section>
     <section id="tentang-kami"
       class="md:hidden bg-[#0D9276] h-auto flex flex-col items-center justify-center px-10 py-20">
       <div class="flex flex-col justify-center items-center">
-        <img src="../assets/img/section-mobile/donasi.svg" alt="donasi">
+        <img src="../assets/img/tentang-kami/mobile/donasi.svg" alt="donasi">
         <div>
-          <h1 class="judul text-center text-[24px] text-white">
+          <h1 class="judul text-center max-[360px]:text-[20px] text-[24px] text-white">
             <span class="text-[#25F177]">Tentang</span>
             Kami
           </h1>
           <div class="flex flex-col justify-center items-center">
-            <p class="text-center text-[16px] font-light text-white mt-5 w-[80%]">Cloubee membantu orang yang ingin
-              berdonasi bagi masyarakat yang membutuhkan </p>
+            <p class="text-center text-[16px] max-[360px]:text-[14px] font-light text-white mt-5 w-[70%]">Cloubee
+              membantu orang yang ingin
+              berdonasi bagi masyarakat yang membutuhkan</p>
           </div>
-          <div class="flex flex-col text-white font-light mt-5 ml-10 text-[16px] gap-4">
-            <div class="flex flex-row items-center gap-5">
-              <img src="../assets/img/ceklist.svg" alt="ceklist">
-              <p>Mempermudah pengguna agar <br> berdonasi di lembaga donasi <br> terpercaya</p>
+          <div class="flex flex-col text-white font-light mt-5 md:ml-10 text-[12px] md:text-[16px] gap-4 font-light">
+            <div class="flex flex-row items-center gap-5 pl-10 md:pl-0 max-[380px]:pl-20">
+              <img src="../assets/img/tentang-kami/ceklist.svg" alt="ceklist" class="w-[20px] md:w-auto">
+              <p class="max-[380px]:w-[300px] w-[90%]">Mempermudah pengguna agar berdonasi di lembaga donasi
+                terpercaya
+              </p>
             </div>
-            <div class="flex flex-row items-center gap-5">
-              <img src="../assets/img/ceklist.svg" alt="ceklist">
-              <p>Menghubungkan pengguna <br> langsung ke platform donasi hanya <br> sekali klik</p>
+            <div class="flex flex-row items-center gap-5 pl-10 md:pl-0 max-[380px]:pl-20">
+              <img src="../assets/img/tentang-kami/ceklist.svg" alt="ceklist" class="w-[20px] md:w-auto">
+              <p class="max-[380px]:w-[200px] w-[90%]">Menghubungkan pengguna langsung ke platform donasi hanya sekali
+                klik</p>
             </div>
-            <div class="flex flex-row items-center gap-5">
-              <img src="../assets/img/ceklist.svg" alt="ceklist">
-              <p>Menginformasikan masyarakat yang <br> membutuhkan</p>
+            <div class="flex flex-row items-center gap-5 pl-10 md:pl-0 max-[380px]:pl-20">
+              <img src="../assets/img/tentang-kami/ceklist.svg" alt="ceklist" class="w-[20px] md:w-auto">
+              <p class="max-[380px]:w-[200px] w-[90%]">Menginformasikan masyarakat yang membutuhkan</p>
             </div>
           </div>
         </div>
@@ -273,13 +357,998 @@
     </section>
 
     <!-- Bantu Mereka -->
-    <section>
-      <div>
-        <h1 class="">Bantu Mereka</h1>
+    <section id="donasi" class="bg-[url('../assets/img/bantu-mereka/bantu-mereka-bg.png')] bg-cover py-50 md:px-20">
+      <div class="flex flex-col">
+        <h1
+          class="judul text-[#0D9276] text-[20px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[36px] text-center my-20" data-aos="fade-up" data-aos-duration="1000">
+          Bantu Mereka</h1>
+        <div class="hidden md:flex flex-wrap justify-center mb-20 gap-20">
+          <div class="bangun-masjid flex flex-col justify-between w-[310px] h-[640px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="2000">
+            <div class="w-[310px] h-[320px]">
+              <img src="../assets/img/bantu-mereka/bangun-masjid.avif" alt="bangun-masjid"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://atapkita.com/bangunmasjidsentul </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2 mt-2">
+                <h1 class="font-semibold">Membantu Bangun Masjid</h1>
+                <br>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="" class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Pembangunan masjid sudah sekitar 2 tahun, dananya dikumpulkan dari masyarakat
+                sekitar. Saat ini
+                dana dari masyarakat
+                <span class="extra-desk-masjid hidden">sudah sangat terbatas sedangkan saat ini masih sangat dibutuhkan
+                  banyak material seperti pasir dan semen.</span>
+                <button onclick="selengkapnyaPembangunanMasjid()"
+                  class="selengkapnya-pembangunan-masjid text-[#0085FF]">Selengkapnya...</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://atapkita.com/bangunmasjidsentul"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="btn text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="pengobatan-kanker flex flex-col justify-between w-[310px] h-[640px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="1600">
+            <div class="w-[310px] h-[320px]">
+              <img src="../assets/img/bantu-mereka/pengobatan-kanker.avif" alt="pengobatan-kanker"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://atapkita.com/Bantusayamelawankank </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2 mt-2">
+                <h1 class="font-semibold">Pengobatan Kanker</h1>
+                <br>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="" class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Anak saya umur 14 tahun, seorang perempuan terkena penyakit kanker sel darah dan sekarang pengobatan
+                nya
+                di
+                rumah sakit
+                <span class="extra-desk-pengobatan-kanker hidden">membutuhkan dana lebih kurang 10 juta, buat
+                  kebutuhan
+                  pengobatan selama 2 tahun di jakarta... Semoga ada yg berbaik hati
+                  di bulan ramadhan ini... Amin, dan mungkin insyaallah kami akan lebaran di jakarta karna takut
+                  keterlambatan kemo.</span> <button onclick="selengkapnyaPengobatanKanker()"
+                  class="selengkapnya-pengobatan-kanker text-[#0085FF]">Selengkapnya...</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://atapkita.com/Bantusayamelawankank"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div class="sedekah-subuh flex flex-col justify-between w-[310px] h-[640px] bg-white rounded-xl shadow-md"  data-aos="fade-up" data-aos-duration="1600">
+            <div class="w-[310px] h-[320px]">
+              <img src="../assets/img/bantu-mereka/sedekah-subuh.avif" alt="sedekah-subuh"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://atapkita.com/berkahsedekahsubuh </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2 mt-2">
+                <h1 class="font-semibold mb-2">Bantu Saudara dengan Sedekah Subuh</h1>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="" class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Sedekah Subuh, yaitu sedekah yang dilakukan pada saat memasuki waktu subuh hingga terbitnya matahari. Di
+                mana
+                <span class="extra-desk-sedekah hidden">sedekah subuh ini dapat dilakukan oleh
+                  siapapun dan dimana pun. 
+                  Di sisi lain, menurut penelitian yang dilakuka oleh Ahmad Rusdi, dkk (Jurnal Psikologi Islam, Vol. 5,
+                  No. 1(2018):
+                  59—68) bahwa orang yang memiliki perilaku bersedekah yang tinggi memiliki tingkat kebahagiaan yang
+                  lebih tinggi juga
+                  dibandingkan dengan orang memiliki perilaku bersedekah rendah.</span>
+                <button onclick="selengkapnyaSedekahSubuh()"
+                  class="selengkapnya-sedekah-subuh text-[#0085FF]">Selengkapnya...</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://atapkita.com/berkahsedekahsubuh"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="bantu-kesembuhan-hafidz flex flex-col justify-between w-[310px] h-[640px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="2000">
+            <div class="w-[310px] h-[320px]">
+              <img src="../assets/img/bantu-mereka/bantu-kesembuhan-hafizd.png" alt="bangun-kesembuhan"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://ayobantu.com/campaign/pedulihafizd </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2 mt-2">
+                <h1 class="font-semibold">Bantu Hafizd Sembuh</h1>
+                <br>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-ayobantu.png" alt="ayobantu"
+                    class="w-[20px] md:w-[30px] rounded-full">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">Ayobantu</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Sahabat. kenalin ini namanya Muhammad Hafidz. Biasa di panggil Hafizd. Hafizd anak kedua dari pasangan
+                dari Bapak
+                <span class="extra-desk-kesembuhan hidden">Hidayat dan Ibu Wadilah. Kepala Hafizd besar ya. Ya karena
+                  Hafizd mengidap Hidrosefalus semenjak berusia 3 bulan. 
+                  Usia Hafidz saat ini 11 tahun, jika hafizd normal harusnya hafizd sudah kelas 4 SD, begitulah jika ibu
+                  hafiz bercerita
+                  pada orang-orang dengan menahan kesedihan. </span>
+                <button onclick="selengkapnyaKesembuhanHafizd()"
+                  class="text-[#0085FF] selengkapnya-kesembuhan-hafizd">Selengkapnya</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://ayobantu.com/campaign/pedulihafizd"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="hadiah-bantu-dengar flex flex-col justify-between w-[310px] h-[640px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="1000">
+            <div class="w-[310px]">
+              <img src="../assets/img/bantu-mereka/hadiah-bantu-dengar.png" alt="bantu-dengar"
+                class="rounded-tl-xl rounded-tr-xl w-[310px] h-[318px]">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[8px] px-4 py-3 z-10 xl:text-[9px]">
+                Sumber: https://digital.dompetdhuafa.org/donasi/indonesiamendengar </p>
+            </div>
+            <div class="flex flex-col mx-5">
+              <div class="flex flex-col -mt-10 gap-2">
+                <h1 class="font-semibold">Hadiah Alat Bantu Dengar</h1>
+                <br>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="dompet dhuafa"
+                    class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">Dompet Dhuafa</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Tanpa ada suara kokok ayam di pagi hari, suara gemercik air sungai atau bahkan tak ada suara adzan
+                setiap lima waktu?
+                <span class="extra-desk-bantu-dengar hidden">Sunyi sekali bukan? Pun demikian yang dialami Azura. Secara
+                  kasat mata, Azura tampak sempurna, tapi siapa sangka, gadis kecil asal Karangponcol, Purbalingga ini
+                  terlahir
+                  dengan gangguan pendengaran. Ia hanya diam dan memperhatikan ketika orang-orang bicara
+                  padanya.</span><button onclick="selengkapnyaBantuDengar()"
+                  class="text-[#0085FF] selengkapnya-bantu-dengar">Selengkapnya</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://digital.dompetdhuafa.org/donasi/indonesiamendengar"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div class="bantu-difabel flex flex-col justify-between w-[310px] h-[640px] bg-white rounded-xl shadow-md"  data-aos="fade-up" data-aos-duration="1000">
+            <div class="w-[310px] ">
+              <img src="../assets/img/bantu-mereka/bantu-difabel.jpg" alt="bantu-difabel"
+                class="rounded-tl-xl rounded-tr-xl w-[310px] h-[318px]">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[8px] px-4 py-3 z-10 xl:text-[8px]">
+                Sumber:
+                https://ayobantu.com/campaign/kepedulianmu-bantu-adik-adik-difabel-miliki-fasilitas-belajar-layak </p>
+            </div>
+            <div class="flex flex-col mx-5">
+              <div class="flex flex-col -mt-10 gap-3">
+                <h1 class="font-semibold">Bantu adik-adik difabel</h1>
+                <br>
+                <div class="flex flex-row items-center gap-4 -mt-2">
+                  <img src="../assets/img/logo-lembaga/logo-ayobantu.png" alt="ayobantu"
+                    class="w-[20px] md:w-[30px] rounded-full">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Sekolah Luar Biasa (SLB) Insan Mandiri Depok sudah berdiri sekitar 29 tahun yang lalu dan tentunya sudah
+                menjadi tempat
+                <span class="extra-desk-bantu-difabel hidden">belajar bagi ratusan anak hebat lainnya. Namun setelah
+                  lama berdiri, membuat SLB ini membutuhkan pembaruan bangunan
+                  serta fasilitas yang ada. Rasanya sangat memprihatinkan jika semangat 47 anak-anak hebat ini, tak
+                  diseimbangi dengan
+                  kebutuhan fasilitas yang ada. </span> <button onclick="selengkapnyaBantuDifabel()"
+                  class="text-[#0085FF] selengkapnya-bantu-difabel">Selengkapnya</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://ayobantu.com/campaign/kepedulianmu-bantu-adik-adik-difabel-miliki-fasilitas-belajar-layak"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+        </div>
+        <!-- Bantu Mereka Repsonsive Mobile -->
+        <div class="scroll-hidden flex md:hidden overflow-x-scroll mb-20 pl-20 gap-10" data-aos="fade-right" data-aos-duration="2000">
+          <div
+            class="bangun-masjid-mobile flex flex-col justify-between w-[210px] h-[540px] bg-white rounded-xl shadow-md">
+            <div class="w-[210px] h-[220px]">
+              <img src="../assets/img/bantu-mereka/bangun-masjid.avif" alt="bangun-masjid"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://atapkita.com/<br>bangunmasjidsentul </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2 mt-2">
+                <h1 class="font-semibold">Membantu Bangun Masjid</h1>
+
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="atapkita" class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Pembangunan masjid sudah sekitar 2 tahun, dananya dikumpulkan dari masyarakat
+                sekitar. Saat ini
+                dana dari masyarakat
+                <span class="extra-desk-masjid-mobile hidden">sudah sangat terbatas sedangkan saat ini masih sangat
+                  dibutuhkan
+                  banyak material seperti pasir dan semen.</span>
+                <button onclick="selengkapnyaPembangunanMasjidMobile()"
+                  class="selengkapnya-pembangunan-masjid-mobile text-[#0085FF]">Selengkapnya...</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://atapkita.com/bangunmasjidsentul"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="btn text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="pengobatan-kanker-mobile flex flex-col justify-between w-[210px] h-[540px] bg-white rounded-xl shadow-md">
+            <div class="w-[210px] h-[220px]">
+              <img src="../assets/img/bantu-mereka/pengobatan-kanker.avif" alt="pengobatan-kanker"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://atapkita.com/<br>Bantusayamelawankank </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2">
+                <h1 class="font-semibold">Pengobatan Kanker</h1>
+                <div class="flex flex-row items-center  gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="atapkita" class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Anak saya umur 14 tahun, seorang perempuan terkena penyakit kanker sel darah dan sekarang pengobatan
+                nya
+                di
+                rumah sakit
+                <span class="extra-desk-pengobatan-kanker-mobile hidden">membutuhkan dana lebih kurang 10 juta, buat
+                  kebutuhan
+                  pengobatan selama 2 tahun di jakarta... Semoga ada yg berbaik hati
+                  di bulan ramadhan ini... Amin, dan mungkin insyaallah kami akan lebaran di jakarta karna takut
+                  keterlambatan kemo.</span> <button onclick="selengkapnyaPengobatanKankerMobile()"
+                  class="selengkapnya-pengobatan-kanker-mobile text-[#0085FF]">Selengkapnya...</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://atapkita.com/Bantusayamelawankank"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="sedekah-subuh-mobile flex flex-col justify-between w-[210px] h-[540px] bg-white rounded-xl shadow-md">
+            <div class="w-[210px] h-[220px]">
+              <img src="../assets/img/bantu-mereka/sedekah-subuh.avif" alt="sedekah-subuh"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://atapkita.com/<br>berkahsedekahsubuh </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2 mt-2">
+                <h1 class="font-semibold mb-2">Bantu Saudara dengan Sedekah Subuh</h1>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-atapkita.png" alt="" class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Sedekah Subuh, yaitu sedekah yang dilakukan pada saat memasuki waktu subuh hingga terbitnya matahari. Di
+                mana
+                <span class="extra-desk-sedekah-mobile hidden">sedekah subuh ini dapat dilakukan oleh
+                  siapapun dan dimana pun. 
+                  Di sisi lain, menurut penelitian yang dilakuka oleh Ahmad Rusdi, dkk (Jurnal Psikologi Islam, Vol. 5,
+                  No. 1(2018):
+                  59—68) bahwa orang yang memiliki perilaku bersedekah yang tinggi memiliki tingkat kebahagiaan yang
+                  lebih tinggi juga
+                  dibandingkan dengan orang memiliki perilaku bersedekah rendah.</span>
+                <button onclick="selengkapnyaSedekahSubuhMobile()"
+                  class="selengkapnya-sedekah-subuh-mobile text-[#0085FF]">Selengkapnya...</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://atapkita.com/berkahsedekahsubuh"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="bantu-kesembuhan-hafidz-mobile flex flex-col justify-between w-[210px] h-[540px] bg-white rounded-xl shadow-md">
+            <div class="w-[210px] h-[220px]">
+              <img src="../assets/img/bantu-mereka/bantu-kesembuhan-hafizd.png" alt="bangun-kesembuhan"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+                Sumber: https://ayobantu.com/<br>campaign/pedulihafizd </p>
+            </div>
+            <div class="flex flex-col mt-2 mx-5">
+              <div class="flex flex-col gap-2 mt-2">
+                <h1 class="font-semibold">Bantu Hafizd Sembuh</h1>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-ayobantu.png" alt="ayobantu"
+                    class="w-[20px] md:w-[30px] rounded-full">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">Ayobantu</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Sahabat. kenalin ini namanya Muhammad Hafidz. Biasa di panggil Hafizd. Hafizd anak kedua dari pasangan
+                dari Bapak
+                <span class="extra-desk-kesembuhan-mobile hidden">Hidayat dan Ibu Wadilah. Kepala Hafizd besar ya. Ya
+                  karena
+                  Hafizd mengidap Hidrosefalus semenjak berusia 3 bulan. 
+                  Usia Hafidz saat ini 11 tahun, jika hafizd normal harusnya hafizd sudah kelas 4 SD, begitulah jika ibu
+                  hafiz bercerita
+                  pada orang-orang dengan menahan kesedihan. </span>
+                <button onclick="selengkapnyaKesembuhanHafizdMobile()"
+                  class="text-[#0085FF] selengkapnya-kesembuhan-hafizd-mobile">Selengkapnya</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://ayobantu.com/campaign/pedulihafizd"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="hadiah-bantu-dengar-mobile flex flex-col justify-between w-[210px] h-[540px] bg-white rounded-xl shadow-md">
+            <div class="w-[210px] h-[220px]">
+              <img src="../assets/img/bantu-mereka/hadiah-bantu-dengar.png" alt="bantu-dengar"
+                class="rounded-tl-xl rounded-tr-xl h-[210px] md:h-[320px]">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[8px] px-4 py-3 z-10 xl:text-[9px]">
+                Sumber: https://digital.dompetdhuafa.org/donasi/<br>indonesiamendengar </p>
+            </div>
+            <div class="flex flex-col mt-4 mx-5">
+              <div class="flex flex-col gap-2">
+                <h1 class="font-semibold">Hadiah Alat Bantu Dengar</h1>
+
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="Dompet Dhuafa"
+                    class="w-[20px] md:w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">Dompet Dhuafa</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Tanpa ada suara kokok ayam di pagi hari, suara gemercik air sungai atau bahkan tak ada suara adzan
+                setiap lima waktu?
+                <span class="extra-desk-bantu-dengar-mobile hidden">Sunyi sekali bukan? Pun demikian yang dialami Azura.
+                  Secara
+                  kasat mata, Azura tampak sempurna, tapi siapa sangka, gadis kecil asal Karangponcol, Purbalingga ini
+                  terlahir
+                  dengan gangguan pendengaran. Ia hanya diam dan memperhatikan ketika orang-orang bicara
+                  padanya. </span><button onclick="selengkapnyaBantuDengarMobile()"
+                  class="text-[#0085FF] selengkapnya-bantu-dengar-mobile">Selengkapnya</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://digital.dompetdhuafa.org/donasi/indonesiamendengar"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div
+            class="bantu-difabel-mobile flex flex-col justify-between w-[220px] h-[540px] bg-white rounded-xl shadow-md">
+            <div class="w-[210px] h-[220px]">
+              <img src="../assets/img/bantu-mereka/bantu-difabel.jpg" alt="bantu-difabel"
+                class="rounded-tl-xl rounded-tr-xl w-[310px] h-[210px]">
+              <p class="w-auto relative bottom-10 text-white bg-black text-[8px] px-4 py-3 z-10 xl:text-[8px]">
+                Sumber:
+                https://ayobantu.com/campaign/<br>kepedulianmu-bantu-adik-adik-difabel-miliki-fasilitas-belajar-layak
+              </p>
+            </div>
+            <div class="flex flex-col mt-4 mx-5">
+              <div class="flex flex-col gap-3">
+                <h1 class="font-semibold">Bantu adik-adik difabel</h1>
+
+                <div class="flex flex-row items-center gap-4 -mt-2">
+                  <img src="../assets/img/logo-lembaga/logo-ayobantu.png" alt="ayobantu"
+                    class="w-[20px] md:w-[30px] rounded-full">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">AtapKita</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Sekolah Luar Biasa (SLB) Insan Mandiri Depok sudah berdiri sekitar 29 tahun yang lalu dan tentunya sudah
+                menjadi tempat
+                <span class="extra-desk-bantu-difabel-mobile hidden">belajar bagi ratusan anak hebat lainnya. Namun
+                  setelah
+                  lama berdiri, membuat SLB ini membutuhkan pembaruan bangunan
+                  serta fasilitas yang ada. Rasanya sangat memprihatinkan jika semangat 47 anak-anak hebat ini, tak
+                  diseimbangi dengan
+                  kebutuhan fasilitas yang ada. </span> <button onclick="selengkapnyaBantuDifabelMobile()"
+                  class="text-[#0085FF] selengkapnya-bantu-difabel-mobile">Selengkapnya</button>
+              </p>
+            </div>
+            <a target="_blank" href="https://ayobantu.com/campaign/kepedulianmu-bantu-adik-adik-difabel-miliki-fasilitas-belajar-layak"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+        </div>
+    </section>
+    <!-- Rekomendasi Bantuan -->
+    <section id="rekomendasi-bantuan"
+      class="bg-[url('../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-bg.png')] bg-cover py-20 md:px-20">
+      <div class="flex flex-col items-center justify-center">
+        <h1
+          class="judul text-[#0D9276] text-[20px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[36px] text-center my-20" data-aos="fade-up" data-aos-duration="1000">
+          Rekomendasi Bantuan</h1>
+        <div class="flex flex-col items-center gap-10 hidden lg:flex" >
+          <div class="flex flex-col md:flex-row gap-10 xl:mx-20" data-aos="fade-right" data-aos-duration="1000">
+            <div class="">
+              <img class="rounded-xl w-[560px]" src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img1.jpg"
+                alt="https://paybill.id/cfd/upload/banner-program/compress/paybill-program-banner-1-NOALGD-1698926511348.jpg"
+                width="500">
+              <p
+                class="text-sm rounded-bl-xl rounded-br-xl bg-black text-white/70 relative bottom-6 px-4 py-2 w-[520px]">
+                Sumber:
+                https://donasi.baznas.go.id/bantumuslimdipalestina
+              </p>
+            </div>
+            <div class="flex flex-col gap-8">
+              <h1 class="font-semibold xl:text-[28px]">Bantu Jutaan Muslim Rakyat Palestina</h1>
+              <p class="w-[80%] font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px]">Gempuran
+                Israel
+                ke Palestina kembali memanas sejak Sabtu (7/10). Kementerian Kesehatan setempat
+                melaporkan, sebanyak <span class="extra-desk-rekomendasi1 hidden">18.891 orang tewas dan 54.075 orang
+                  lainnya mengalami luka-luka, serta jutaan warga kehilangan akses dasar, terputusnya
+                  akses listrik, air dan membutuhkan bahan makanan (13/12). </span><button
+                  onclick="selengkapnyaRekomendasi1()"
+                  class="text-[#0085FF] selengkapnya-rekomendasi1">Selengkapnya...</button></p>
+              <div class="flex flex-row items-center gap-4">
+                <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas HUB" width="50">
+                <h3 class="font-semibold text-black/40 md:text-[14px] xl:text-[18px]">
+                  Baznas HUB
+                </h3>
+              </div>
+              <a target="_blank" href="https://donasi.baznas.go.id/bantumuslimdipalestina"
+                class="btn btn-shadow bg-[#0D9276] flex flex-col justify-center items-center hover:bg-black text-white md:text-[12px] xl:text-[14px] md:w-[150px] md:h-[40px] xl:w-[150px] xl:h-[40px] rounded-xl animation duration-500">
+                <button class="">
+                  <p>Donasi Sekarang</p>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-10 hidden md:flex xl:mx-20" data-aos="fade-left" data-aos-duration="1000">
+            <div class="">
+              <img class="rounded-xl" src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img2.avif"
+                alt="https://paybill.id/cfd/upload/banner-program/compress/paybill-program-banner-1-NOALGD-1698926511348.jpg"
+                width="520">
+              <p
+                class="text-sm rounded-bl-xl rounded-br-xl bg-black text-white/70 relative bottom-6 px-4 py-2 w-[520px]">
+                Sumber:
+                https://kitabisa.com/campaign/karhutladikalbar</p>
+            </div>
+            <div class="flex flex-col gap-8">
+              <h1 class="font-semibold xl:text-[28px]">URGENT! Asap Tebal Kebakaran Hutan Kepung Kalbar!</h1>
+              <p class="w-[80%] font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px]">Gempuran
+                Gempuran
+                Kebakaran Hutan dan Lahan (Karhutla) yang terjadi di sejumlah titik di wilayah Kalimantan Barat
+                (Kalbar) selama beberapa
+                hari terakhir memicu kabut asap tebal. Parahnya, asap <span
+                  class="extra-desk-rekomendasi2 hidden">sudah menganggu jarak
+                  pandang dan kesehatan masyarakat (kompas.id,
+                  14/8/2023). Dampak Kabut Asap, menyebabkan masyarakat
+                  rentan terdampak gangguan pernafasan ISPA.
+                  Sebanyak 1.985 titik panas (hotspot) penyebab karhutla terpantau Badan Metereologi Klimatologi dan
+                  Geofisika (BMKG)
+                  Kalbar (antaranews.com). 
+                  Karhutla ini terjadi di 5 daerah di Kalbar yakni Kota Pontianak, Kab.Kubu Raya, Kab. Sambas,
+                  Kab.Kapuas Hulu, serta Kab.
+                  Kayong Utara.</span> <button onclick="selengkapnyaRekomendasi2()"
+                  class="text-[#0085FF] extra-desk-rekomendasi2">Selengkapnya...</button></p>
+              <div class="flex flex-row items-center gap-4">
+                <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa.com" width="40">
+                <h3 class="font-semibold text-black/40 md:text-[14px] xl:text-[18px]">
+                  Kitabisa
+                </h3>
+              </div>
+              <a target="_blank" href="https://kitabisa.com/campaign/karhutladikalbar"
+                class="btn btn-shadow bg-[#0D9276] flex flex-col justify-center items-center hover:bg-black text-white md:text-[12px] xl:text-[14px] md:w-[150px] md:h-[40px] xl:w-[150px] xl:h-[40px] rounded-xl animation duration-500">
+                <button class="">
+                  <p>Donasi Sekarang</p>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row gap-10 hidden md:flex xl:mx-20" data-aos="fade-right" data-aos-duration="1000">
+            <div class="">
+              <img class="rounded-xl" src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img3.png"
+                alt="https://paybill.id/cfd/upload/banner-program/compress/paybill-program-banner-1-NOALGD-1698926511348.jpg"
+                width="520">
+              <p
+                class="text-sm rounded-bl-xl rounded-br-xl bg-black text-white/70 relative bottom-6 px-4 py-2 w-[520px]">
+                Sumber:
+                https://digital.dompetdhuafa.org/donasi/indonesiasiapsiaga</p>
+            </div>
+            <div class="flex flex-col gap-8">
+              <h1 class="font-semibold xl:text-[28px]">Indonesia Siap Siaga</h1>
+              <p class="w-[80%] font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px]">Gempuran
+                Gempa, banjir, hingga erupsi melanda Indonesia di awal tahun 2024. Bantu kuatkan mereka yang terdampak
+                segera! <span class="extra-desk-rekomendasi3 hidden">sudah menganggu jarak pandang dan kesehatan
+                  Alhamdulillah, Dompet Dhuafa melalui Disaster Management Center (DMC) telah berada di titik lokasi dan
+                  mengupayakan
+                  berbagai bantuan untuk warga terdampak, antara lain :
+                  • Mendirikan Pos Hangat
+                  <br>
+                  • Dapur Umum
+                  <br>
+                  • Lapak Ceria
+                  <br>
+                  • Pembagian Sembako
+                  <br>
+                  Bantu Bersihkan Rumah Warga
+                  Terima kasih tetap bersama kami bantu kuatkan mereka yang terdampak bencana. Sepanjang awal tahun
+                  2024, BMKG mencatat 92
+                  bencana terjadi di Indonesia. Gempa, banjir, hingga erupsi menyebabkan lebih dari 93 ribu orang
+                  terdampak dan beberapa
+                  di antaranya harus meregang nyawa.
+                  Mari tetap bersama satukan solidaritas kuatkan mereka yang terkena musibah! </span><button
+                  onclick="selengkapnyaRekomendasi3()"
+                  class="text-[#0085FF] selengkapnya-rekomendasi3">Selengkapnya...</button></p>
+              <div class="flex flex-row items-center gap-4">
+                <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="Dompet Dhuafa" width="50">
+                <h3 class="font-semibold text-black/40 md:text-[14px] xl:text-[18px]">
+                  Dompet Dhuafa
+                </h3>
+              </div>
+              <a href="https://digital.dompetdhuafa.org/donasi/indonesiasiapsiaga" target="_blank"
+                class="btn btn-shadow bg-[#0D9276] flex flex-col justify-center items-center hover:bg-black text-white md:text-[12px] xl:text-[14px] md:w-[150px] md:h-[40px] xl:w-[150px] xl:h-[40px] rounded-xl animation duration-500">
+                <button class="">
+                  <p>Donasi Sekarang</p>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Rekomendasi Bantuan Mobile -->
+        <div class="flex flex-wrap gap-20 justify-center lg:hidden">
+          <div class="rekomendasi-1 flex flex-col justify-between w-[310px] h-[540px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="1000">
+            <div class="w-[310px] h-[220px]">
+              <img src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img1.jpg" alt="bangun-masjid"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p
+                class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 rounded-md z-10 xl:text-[12px]">
+                Sumber: https://donasi.baznas.go.id/bantumuslimdipalestina </p>
+            </div>
+            <div class="flex flex-col -mt-14 mx-5">
+              <div class="flex flex-col gap-2">
+                <h1 class="font-semibold">Membantu Bangun Masjid</h1>
+                <div class="flex flex-row items-center mt-4 gap-4">
+                  <img src="../assets/img/logo-lembaga/Logo_BAZNAS.png" alt="Baznas" class="w-[50px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">Baznas HUB</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Gempuran Israel ke Palestina kembali memanas sejak Sabtu (7/10). Kementerian Kesehatan setempat
+                melaporkan, sebanyak <span class="extra-desk-rekomendasi1-mobile hidden">18.891 orang tewas dan 54.075
+                  orang lainnya mengalami luka-luka, serta jutaan warga kehilangan akses dasar, terputusnya
+                  akses listrik, air dan membutuhkan bahan makanan (13/12).</span>
+                <button onclick="selengkapnyaRekomendasi1Mobile()"
+                  class="text-[#0085FF] selengkapnya-rekomendasi1-mobile">Selengkapnya...</button>
+              </p>
+            </div>
+            <a href="https://donasi.baznas.go.id/bantumuslimdipalestina"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div class="rekomendasi-2 flex flex-col justify-between w-[310px] h-[540px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="1000">
+            <div class="w-[310px] h-[220px]">
+              <img src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img2.avif" alt="bangun-masjid"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p
+                class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 rounded-md z-10 xl:text-[12px]">
+                Sumber: https://kitabisa.com/campaign/karhutladikalbar </p>
+            </div>
+            <div class="flex flex-col -mt-14 mx-5">
+              <div class="flex flex-col gap-2">
+                <h1 class="font-medium">URGENT! Asap Tebal Kebakaran Hutan Kepung Kalbar!</h1>
+                <div class="flex flex-row items-center gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-kitabisa.png" alt="Kitabisa" class="w-[30px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">Kitabisa</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Kebakaran Hutan dan Lahan (Karhutla) yang terjadi di sejumlah titik di wilayah Kalimantan Barat
+                (Kalbar) selama beberapa
+                <span class="extra-desk-rekomendasi2-mobile hidden">hari terakhir memicu kabut asap tebal. Parahnya,
+                  asap sudah menganggu jarak pandang dan kesehatan masyarakat (kompas.id, 14/8/2023). Dampak Kabut Asap,
+                  menyebabkan masyarakat
+                  rentan terdampak gangguan pernafasan ISPA.
+                  Sebanyak 1.985 titik panas (hotspot) penyebab karhutla terpantau Badan Metereologi Klimatologi dan
+                  Geofisika (BMKG)
+                  Kalbar (antaranews.com). 
+                  Karhutla ini terjadi di 5 daerah di Kalbar yakni Kota Pontianak, Kab.Kubu Raya, Kab. Sambas,
+                  Kab.Kapuas Hulu, serta Kab.
+                  Kayong Utara. </span> <button onclick="selengkapnyaRekomendasi2Mobile()"
+                  class="text-[#0085FF] selengkapnya-rekomendasi2-mobile">Selengkapnya</button>
+              </p>
+            </div>
+            <a href="https://kitabisa.com/campaign/karhutladikalbar"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+          <div class="rekomendasi-3 flex flex-col justify-between w-[310px] h-[540px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="1000">
+            <div class="w-[310px] h-[220px]">
+              <img src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img3.png" alt="bangun-masjid"
+                class="rounded-tl-xl rounded-tr-xl">
+              <p
+                class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 rounded-md z-10 xl:text-[12px]">
+                Sumber: https://digital.dompetdhuafa.org/donasi/indonesiasiapsiaga </p>
+            </div>
+            <div class="flex flex-col -mt-16 mx-5">
+              <div class="flex flex-col gap-2 ">
+                <h1 class="font-medium">Indonesia Siap Siaga</h1>
+                <div class="flex flex-row items-center mt-4 gap-4">
+                  <img src="../assets/img/logo-lembaga/logo-dompet-dhuafa.png" alt="Dompet Dhuafa" class="w-[50px]">
+                  <p class="text-[12px] md:text-[14px] xl:text-[16px] text-[#2d2d2d] font-normal">Dompet Dhuafa</p>
+                </div>
+              </div>
+              <p class="w-[80%] ml-6 font-light text-[#2d2d2d] text-[12px] md:text-[14px] xl:text-[16px] mt-4">
+                Gempa, banjir, hingga erupsi melanda Indonesia di awal tahun 2024. Bantu kuatkan mereka yang terdampak
+                segera! <span class="extra-desk-rekomendasi3-mobile hidden">sudah menganggu jarak pandang dan kesehatan
+                  Alhamdulillah, Dompet Dhuafa melalui Disaster Management Center (DMC) telah berada di titik lokasi dan
+                  mengupayakan
+                  berbagai bantuan untuk warga terdampak, antara lain :
+                  • Mendirikan Pos Hangat
+                  <br>
+                  • Dapur Umum
+                  <br>
+                  • Lapak Ceria
+                  <br>
+                  • Pembagian Sembako
+                  <br>
+                  Bantu Bersihkan Rumah Warga
+                  Terima kasih tetap bersama kami bantu kuatkan mereka yang terdampak bencana. Sepanjang awal tahun
+                  2024, BMKG mencatat 92
+                  bencana terjadi di Indonesia. Gempa, banjir, hingga erupsi menyebabkan lebih dari 93 ribu orang
+                  terdampak dan beberapa
+                  di antaranya harus meregang nyawa.
+                  Mari tetap bersama satukan solidaritas kuatkan mereka yang terkena musibah!</span> <button
+                  onclick="selengkapnyaRekomendasi3Mobile()"
+                  class="text-[#0085FF] selengkapnya-rekomendasi3-mobile">Selengkapnya</button></p>
+            </div>
+            <a href="https://digital.dompetdhuafa.org/donasi/indonesiasiapsiaga"
+              class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+              <button class="">
+                <p class="text-white">Donasi Sekarang</p>
+              </button>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
+    <!-- Zakat -->
+    <section class="flex flex-col justify-center items-center bg-[#FBFFCE] bg-cover py-20 md:px-20 relative z-20">
+      <div id="zakat"></div>
+      <h1
+        class="judul text-[#0D9276] text-[20px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[36px] text-center mt-20 mb-10" data-aos="fade-up" data-aos-duration="1000">
+        ZAKAT</h1>
+      <p class="text-center text-[10px] md:text-[14px] xl:text-[16px] text-black w-[90%]" data-aos="fade-up" data-aos-duration="1600">Zakat, dikelola oleh Baznas,
+        adalah kewajiban
+        keagamaan umat
+        Islam untuk
+        memberikan sebagian dari harta mereka kepada
+        yang membutuhkan. Baznas mengumpulkan zakat dari masyarakat dan mendistribusikannya kepada mereka yang
+        memerlukan
+        bantuan, seperti fakir miskin, anak yatim, dan mereka yang dalam kesulitan ekonomi, jadi kami menginformasikan
+        untuk
+        pengguna umat muslim untuk berzakat di lembaga terpercaya yaitu Baznas.</p>
+      <div class="flex flex-wrap justify-center gap-20 mt-20">
+        <div class="zakat-maal flex flex-col justify-between w-[310px] h-[450px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="2000">
+          <div class="w-[310px] h-[220px]">
+            <img src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img3.png" alt="bangun-masjid"
+              class="rounded-tl-xl rounded-tr-xl">
+            <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+              Sumber: https://atapkita.com/bangunmasjidsentul </p>
+          </div>
+          <div class="flex flex-col mt-2 mx-5 ">
+            <div class="flex flex-col gap-2 ">
+              <h1 class="text-[18px] xl:text-[24px] text-center font-semibold">Zakat Maal</h1>
+            </div>
+            <p class="text-center font-light text-[#2d2d2d] text-[10px] md:text-[14px] xl:text-[16px] mt-4">
+              Zakat mal adalah zakat yang dikenakan atas segala jenis harta, yang secara zat <span
+                class="extra-desk-zakat-maal hidden">maupun substansi perolehannya, tidak bertentangan dengan ketentuan
+                agama. Sebagai contoh, zakat mal terdiri atas uang,
+                emas, surat berharga, penghasilan profesi, dan lain-lain, sebagaimana yang terdapat dalam UU No 23/2011
+                tentang
+                Pengelolaan Zakat, Peraturan Menteri Agama No 52 Tahun 2014 yang telah diubah dua kali dengan perubahan
+                kedua adalah
+                Peraturan Menteri Agama No 31/2019, dan pendapat Syaikh Dr. Yusuf Al-Qardhawi serta para ulama
+                lainnya.</span><br><button onclick="selengkapnyaZakatMaal()"
+                class="text-[#0085FF] selengkapnya-zakat-maal">Selengkapnya...</button></p>
+          </div>
+          <a href="https://donasi.baznas.go.id/donasi/zakatmaal" target="_blank"
+            class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+            <button class="">
+              <p class="text-white">Zakat Sekarang</p>
+            </button>
+          </a>
+        </div>
+        <div class="zakat-penghasilan flex flex-col justify-between w-[310px] h-[450px] bg-white rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="2000">
+          <div class="w-[310px] h-[220px]">
+            <img src="../assets/img/rekomendasi-bantuan/rekomendasi-bantuan-img3.png" alt="bangun-masjid"
+              class="rounded-tl-xl rounded-tr-xl">
+            <p class="w-auto relative bottom-10 text-white bg-black text-[10px] px-4 py-3 z-10 xl:text-[12px]">
+              Sumber: https://atapkita.com/bangunmasjidsentul </p>
+          </div>
+          <div class="flex flex-col mt-2 mx-5 ">
+            <div class="flex flex-col gap-2 ">
+              <h1 class="text-[18px] xl:text-[24px] text-center font-semibold">Zakat Penghasilan</h1>
+            </div>
+            <p class="text-center font-light text-[#2d2d2d] text-[10px] md:text-[14px] xl:text-[16px] mt-4">
+              Zakat penghasilan atau yang dikenal juga sebagai zakat profesi; zakat pendapatan <span
+                class="extra-desk-zakat-penghasilan hidden">adalah bagian dari zakat mal yang wajib dikeluarkan atas
+                harta yang berasal dari pendapatan / penghasilan rutin dari
+                pekerjaan yang tidak melanggar syariah. Nishab zakat penghasilan sebesar 85 gram emas per tahun. Kadar
+                zakat penghasilan
+                senilai 2,5%.</span>
+              <br><button onclick="selengkapnyaZakatPenghasilan()"
+                class="text-[#0085FF] selengkapnya-zakat-penghasilan">Selengkapnya..</button>
+            </p>
+          </div>
+          <a href="https://donasi.baznas.go.id/zakatpenghasilan" target="_blank"
+            class="btn rounded-bl-xl rounded-br-xl flex justify-center bg-[#0D9276] mt-4 px-4 py-2 hover:bg-black duration-500 animation">
+            <button class="">
+              <p class="text-white">Zakat Sekarang</p>
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ -->
+    <section x-data="
+   {
+   openFaq1: false, 
+   openFaq2: false, 
+   openFaq3: false, 
+   openFaq4: false, 
+   openFaq5: false, 
+   openFaq6: false
+   }
+   " id="faq" class="bg-[#2d2d2d] py-20 relative">
+      <div class="bubble-1 absolute -top-10 -right-6 z-20">
+        <div
+          class="rounded-full blur-xl xl:blur-3xl bg-[#0FA958] xl:bg-[#0FA958]/80 w-[140px] h-[140px] xl:w-[250px] xl:h-[250px]">
+        </div>
+      </div>
+      <div class="bubble-2 absolute bottom-0 left-0 z-[5]">
+        <div
+          class="rounded-full blur-xl xl:blur-3xl bg-[#0FA958] xl:bg-[#0FA958]/80 w-[140px] h-[140px] xl:w-[250px] xl:h-[250px]">
+        </div>
+      </div>
+      <div class="absolute top-[48%] bottom-0 left-5 z-10 hidden lg:block">
+        <svg class="panahKiri" width="70" height="83" viewBox="0 0 82 93" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M24.2408 1.8064C14.3742 6.39023 -1.49857 20.1259 13.9431 38.3982C16.7904 40.9211 23.857 46.5391 29.3457 48.827C29.8285 44.2305 33.7337 34.9438 45.4921 34.5689C50.1895 34.8387 58.8441 37.7662 55.8829 47.3177C53.4943 51.5327 46.1409 59.2897 35.836 56.5973C37.0228 65.376 44.879 81.9318 66.809 77.9261C64.1071 77.2978 58.717 75.1871 58.7715 71.7698C59.6911 70.3798 64.3755 69.0261 75.7563 74.7322C79.893 75.91 85.3747 79.3684 74.2077 83.7794C67.8953 86.9175 54.349 92.9919 50.6629 92.1841C50.4166 90.5023 51.6797 86.406 58.7027 83.4743C49.6889 83.5065 31.1307 77.9204 29.0086 55.3182C22.0691 53.7252 6.85899 45.9175 1.53433 27.4316C1.06422 22.6444 2.1759 11.3818 10.3836 4.62941C13.5565 2.61192 20.77 -0.777189 24.2408 1.8064ZM47.8443 48.5945C51.0063 46.05 54.7001 40.732 44.1796 39.8155C40.8835 40.9921 35.3939 44.6506 35.3663 49.3324C36.4983 50.521 40.5788 52.0374 47.8443 48.5945Z"
+            fill="white" />
+          <path
+            d="M13.9431 38.3982L13.6115 38.7724L13.5845 38.7485L13.5612 38.7209L13.9431 38.3982ZM24.2408 1.8064L24.5393 1.40532L25.2124 1.90633L24.4514 2.25985L24.2408 1.8064ZM29.3457 48.827L29.8429 48.8793L29.7728 49.5468L29.1533 49.2885L29.3457 48.827ZM45.4921 34.5689L45.4761 34.0692L45.4985 34.0685L45.5207 34.0697L45.4921 34.5689ZM55.8829 47.3177L56.3604 47.4658L56.3445 47.5173L56.3179 47.5642L55.8829 47.3177ZM35.836 56.5973L35.3405 56.6643L35.2405 55.925L35.9624 56.1136L35.836 56.5973ZM66.809 77.9261L66.9222 77.439L66.8988 78.4179L66.809 77.9261ZM58.7715 71.7698L58.2716 71.7619L58.2739 71.6158L58.3545 71.494L58.7715 71.7698ZM75.7563 74.7322L75.6193 75.2131L75.5741 75.2002L75.5322 75.1792L75.7563 74.7322ZM74.2077 83.7794L73.9851 83.3317L74.0042 83.3222L74.024 83.3144L74.2077 83.7794ZM50.6629 92.1841L50.5558 92.6725L50.2182 92.5985L50.1681 92.2565L50.6629 92.1841ZM58.7027 83.4743L58.7009 82.9743L58.8953 83.9357L58.7027 83.4743ZM29.0086 55.3182L29.1205 54.8309L29.4727 54.9118L29.5064 55.2715L29.0086 55.3182ZM1.53433 27.4316L1.05387 27.57L1.0412 27.526L1.03673 27.4805L1.53433 27.4316ZM10.3836 4.62941L10.0659 4.24329L10.0895 4.22388L10.1153 4.20749L10.3836 4.62941ZM44.1796 39.8155L44.0116 39.3446L44.1143 39.3079L44.223 39.3174L44.1796 39.8155ZM47.8443 48.5945L48.1578 48.984L48.1118 49.021L48.0584 49.0463L47.8443 48.5945ZM35.3663 49.3324L35.0042 49.6772L34.8651 49.5311L34.8663 49.3294L35.3663 49.3324ZM13.5612 38.7209C9.65343 34.0968 7.69925 29.7263 7.15465 25.6835C6.60972 21.6382 7.48165 17.9617 9.15773 14.7385C12.4986 8.31373 19.0409 3.67085 24.0301 1.35295L24.4514 2.25985C19.5741 4.52578 13.2467 9.04267 10.045 15.1998C8.44973 18.2675 7.63213 21.7375 8.1457 25.55C8.6596 29.3649 10.512 33.5634 14.325 38.0754L13.5612 38.7209ZM29.1533 49.2885C23.583 46.9666 16.4641 41.3001 13.6115 38.7724L14.2747 38.024C17.1166 40.5422 24.131 46.1116 29.5381 48.3655L29.1533 49.2885ZM45.508 35.0687C39.7753 35.2514 35.9899 37.5989 33.5712 40.439C31.1388 43.2952 30.0753 46.6672 29.8429 48.8793L28.8484 48.7748C29.0989 46.3903 30.2294 42.8207 32.8099 39.7907C35.404 36.7446 39.4505 34.2613 45.4761 34.0692L45.508 35.0687ZM55.4053 47.1696C56.1227 44.8556 56.1249 42.983 55.6888 41.4728C55.2529 39.9635 54.3676 38.7755 53.2417 37.8487C50.9724 35.9808 47.7519 35.1995 45.4634 35.0681L45.5207 34.0697C47.9297 34.2081 51.3852 35.0254 53.8772 37.0766C55.132 38.1094 56.1487 39.4611 56.6495 41.1954C57.1501 42.9289 57.1236 45.0041 56.3604 47.4658L55.4053 47.1696ZM35.9624 56.1136C40.9567 57.4184 45.2311 56.1954 48.564 54.1232C51.9086 52.0436 54.2889 49.1164 55.4478 47.0712L56.3179 47.5642C55.0882 49.7341 52.5976 52.7928 49.0921 54.9724C45.5749 57.1593 41.0202 58.4686 35.7096 57.0811L35.9624 56.1136ZM66.8988 78.4179C55.7826 80.4484 48.1701 77.2681 43.1946 72.4137C38.2434 67.583 35.9452 61.137 35.3405 56.6643L36.3315 56.5304C36.9136 60.8363 39.1369 67.0576 43.893 71.698C48.6249 76.3147 55.9054 79.4094 66.7191 77.4342L66.8988 78.4179ZM59.2714 71.7778C59.2487 73.203 60.3687 74.4522 62.0187 75.468C63.6386 76.4654 65.6073 77.1333 66.9222 77.439L66.6957 78.4131C65.3088 78.0906 63.2314 77.389 61.4944 76.3196C59.7875 75.2687 58.2398 73.7539 58.2716 71.7619L59.2714 71.7778ZM75.5322 75.1792C69.8743 72.3425 65.9238 71.2831 63.3039 71.0886C61.9949 70.9914 61.0334 71.1113 60.3621 71.3211C59.6843 71.5329 59.3346 71.8248 59.1885 72.0457L58.3545 71.494C58.6682 71.0198 59.2489 70.6213 60.0638 70.3666C60.885 70.11 61.9784 69.9874 63.378 70.0913C66.1754 70.299 70.2574 71.4159 75.9804 74.2852L75.5322 75.1792ZM74.024 83.3144C76.7943 82.2201 78.473 81.2062 79.3942 80.3118C80.3011 79.4313 80.4146 78.736 80.2439 78.1934C80.0537 77.5885 79.4598 76.9894 78.5705 76.4499C77.6985 75.9209 76.6248 75.4994 75.6193 75.2131L75.8932 74.2513C76.9561 74.5539 78.1189 75.0064 79.0892 75.5949C80.0422 76.173 80.8965 76.9351 81.1979 77.8934C81.5188 78.9139 81.1675 79.9839 80.0908 81.0293C79.0284 82.0607 77.2046 83.1332 74.3914 84.2444L74.024 83.3144ZM50.7699 91.6957C51.1478 91.7785 51.696 91.7798 52.41 91.6877C53.1159 91.5966 53.949 91.419 54.8799 91.1699C56.7415 90.6718 58.9583 89.8975 61.2686 88.9957C65.8874 87.1927 70.838 84.8962 73.9851 83.3317L74.4303 84.2271C71.265 85.8007 66.2863 88.1105 61.6322 89.9272C59.3061 90.8353 57.0507 91.6242 55.1384 92.1359C54.1823 92.3918 53.303 92.5807 52.538 92.6795C51.7809 92.7772 51.0994 92.7916 50.5558 92.6725L50.7699 91.6957ZM58.8953 83.9357C51.9887 86.8188 50.9572 90.7435 51.1576 92.1116L50.1681 92.2565C49.8759 90.2612 51.3708 85.9931 58.5101 83.0129L58.8953 83.9357ZM29.5064 55.2715C30.5534 66.4228 35.6435 73.3386 41.5578 77.4744C47.4916 81.6238 54.2797 82.9901 58.7009 82.9743L58.7045 83.9743C54.1118 83.9907 47.114 82.58 40.9847 78.2939C34.8359 73.9941 29.5859 66.8158 28.5108 55.365L29.5064 55.2715ZM2.0148 27.2932C7.27666 45.5611 22.3093 53.2673 29.1205 54.8309L28.8967 55.8056C21.8289 54.183 6.44132 46.2739 1.05387 27.57L2.0148 27.2932ZM10.7012 5.01554C6.69599 8.31059 4.4104 12.716 3.18469 16.9078C1.95806 21.1027 1.80294 25.0508 2.03194 27.3828L1.03673 27.4805C0.795614 25.0252 0.961281 20.9484 2.22488 16.6271C3.4894 12.3026 5.86349 7.70057 10.0659 4.24329L10.7012 5.01554ZM23.9422 2.20748C23.1859 1.64449 22.1991 1.38709 21.0517 1.3738C19.9044 1.36051 18.6304 1.59221 17.3418 1.97209C14.7639 2.73213 12.21 4.06056 10.6519 5.05134L10.1153 4.20749C11.73 3.18077 14.3693 1.8059 17.0591 1.01291C18.4044 0.616278 19.7828 0.359027 21.0633 0.373869C22.3438 0.388704 23.5602 0.676512 24.5393 1.40532L23.9422 2.20748ZM44.223 39.3174C46.884 39.5492 48.7165 40.0633 49.8974 40.7903C51.1065 41.5347 51.6451 42.5154 51.6429 43.5955C51.6408 44.6286 51.1431 45.6639 50.491 46.5702C49.8319 47.4862 48.9738 48.3273 48.1578 48.984L47.5309 48.2049C48.2958 47.5894 49.0852 46.8116 49.6793 45.9861C50.2802 45.1511 50.6414 44.3225 50.6429 43.5935C50.6443 42.9115 50.3314 42.2318 49.3731 41.6418C48.3865 41.0344 46.7355 40.5401 44.1363 40.3136L44.223 39.3174ZM34.8663 49.3294C34.8813 46.7892 36.374 44.5817 38.2085 42.8917C40.0494 41.196 42.3051 39.9538 44.0116 39.3446L44.3477 40.2864C42.7581 40.8539 40.6209 42.0292 38.8861 43.6272C37.1449 45.2312 35.8789 47.1937 35.8663 49.3353L34.8663 49.3294ZM48.0584 49.0463C40.7087 52.5292 36.3551 51.0956 35.0042 49.6772L35.7284 48.9875C36.6416 49.9464 40.4488 51.5457 47.6302 48.1426L48.0584 49.0463Z"
+            fill="black" />
+        </svg>
+      </div>
+      <div class="absolute top-[48%] bottom-0 right-5 z-10 hidden lg:block">
+        <svg class="panahKanan" width="70" height="83" viewBox="0 0 80 94" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M55.8295 2.1519C65.8117 6.47816 82.0356 19.7974 67.0732 38.4641C64.2924 41.0601 57.3739 46.8596 51.9465 49.2892C51.3446 44.7067 47.1997 35.5244 35.4355 35.4548C30.7467 35.8465 22.171 38.9975 25.3791 48.469C27.8762 52.6206 35.4284 60.1841 45.66 57.2253C44.7014 66.0318 37.2774 82.7859 15.2509 79.3505C17.9356 78.6524 23.2691 76.4025 23.1259 72.9878C22.1705 71.6221 17.4526 70.3905 6.22377 76.3899C2.11897 77.6747 -3.27118 81.2742 8.00659 85.3939C14.3983 88.3672 28.0977 94.0879 31.7616 93.1848C31.9641 91.4972 30.5951 87.435 23.4984 84.6865C32.5101 84.4848 50.917 78.419 52.4519 55.7695C59.3477 53.9968 74.3501 45.7971 79.1933 27.1793C79.539 22.3814 78.1354 11.1515 69.7553 4.61438C66.5311 2.6799 59.2321 -0.520882 55.8295 2.1519ZM33.448 49.5367C30.2211 47.0752 26.3905 41.8548 36.8837 40.6656C40.2092 41.7563 45.7919 45.2711 45.941 49.9506C44.8402 51.1682 40.8005 52.79 33.448 49.5367Z"
+            fill="white" />
+          <path
+            d="M67.0732 38.4641L67.4144 38.8296L67.4408 38.805L67.4634 38.7769L67.0732 38.4641ZM55.8295 2.1519L55.5207 1.7587L54.8608 2.27701L55.6307 2.61067L55.8295 2.1519ZM51.9465 49.2892L51.4507 49.3543L51.5382 50.0198L52.1508 49.7455L51.9465 49.2892ZM35.4355 35.4548L35.4385 34.9548L35.4162 34.9547L35.3939 34.9566L35.4355 35.4548ZM25.3791 48.469L24.9055 48.6294L24.9228 48.6805L24.9506 48.7267L25.3791 48.469ZM45.66 57.2253L46.1571 57.2794L46.2378 56.5377L45.5211 56.745L45.66 57.2253ZM15.2509 79.3505L15.1251 78.8666L15.1739 79.8446L15.2509 79.3505ZM23.1259 72.9878L23.6255 72.9669L23.6194 72.8209L23.5356 72.7012L23.1259 72.9878ZM6.22377 76.3899L6.37312 76.8671L6.41795 76.8531L6.45939 76.8309L6.22377 76.3899ZM8.00659 85.3939L8.21748 84.9406L8.19816 84.9316L8.17815 84.9243L8.00659 85.3939ZM31.7616 93.1848L31.8812 93.6702L32.2168 93.5875L32.258 93.2444L31.7616 93.1848ZM23.4984 84.6865L23.4872 84.1867L23.3179 85.1528L23.4984 84.6865ZM52.4519 55.7695L52.3274 55.2852L51.9774 55.3752L51.953 55.7356L52.4519 55.7695ZM79.1933 27.1793L79.6772 27.3052L79.6887 27.2609L79.692 27.2152L79.1933 27.1793ZM69.7553 4.61438L70.0628 4.22014L70.0387 4.20135L70.0126 4.18563L69.7553 4.61438ZM36.8837 40.6656L37.0395 40.1905L36.9358 40.1565L36.8274 40.1688L36.8837 40.6656ZM33.448 49.5367L33.1448 49.9342L33.1917 49.9701L33.2457 49.9939L33.448 49.5367ZM45.941 49.9506L46.3119 50.2859L46.4472 50.1363L46.4408 49.9346L45.941 49.9506ZM67.4634 38.7769C71.2499 34.0529 73.09 29.6332 73.5295 25.5776C73.9693 21.5195 73.0022 17.8669 71.2431 14.6882C67.7366 8.35234 61.076 3.88079 56.0283 1.69314L55.6307 2.61067C60.5652 4.74927 67.0077 9.10045 70.3681 15.1724C72.0424 18.1977 72.9498 21.6453 72.5353 25.4698C72.1206 29.2968 70.3778 33.542 66.6831 38.1514L67.4634 38.7769ZM52.1508 49.7455C57.6589 47.2798 64.6284 41.4305 67.4144 38.8296L66.732 38.0986C63.9565 40.6898 57.0889 46.4393 51.7422 48.8328L52.1508 49.7455ZM35.4326 35.9548C41.1681 35.9888 45.0131 38.2372 47.5047 41.0136C50.0104 43.8057 51.1611 47.149 51.4507 49.3543L52.4422 49.224C52.13 46.8469 50.9072 43.3078 48.249 40.3457C45.5766 37.368 41.4671 34.9905 35.4385 34.9548L35.4326 35.9548ZM25.8527 48.3086C25.0754 46.0139 25.0247 44.142 25.4214 42.621C25.818 41.1009 26.6721 39.8903 27.7736 38.9346C29.9937 37.0085 33.1928 36.1439 35.4772 35.9531L35.3939 34.9566C32.9894 35.1574 29.5562 36.0641 27.1183 38.1793C25.8907 39.2443 24.9094 40.6219 24.4538 42.3686C23.9984 44.1145 24.0787 46.1883 24.9055 48.6294L25.8527 48.3086ZM45.5211 56.745C40.5623 58.179 36.2576 57.0673 32.872 55.0822C29.4746 53.0902 27.0192 50.2257 25.8075 48.2113L24.9506 48.7267C26.2361 50.8639 28.8053 53.8569 32.3662 55.9449C35.939 58.0397 40.5261 59.2304 45.7989 57.7056L45.5211 56.745ZM15.1739 79.8446C26.339 81.5859 33.8665 78.2091 38.7142 73.2273C43.5384 68.2697 45.6687 61.7662 46.1571 57.2794L45.163 57.1712C44.6927 61.4908 42.6317 67.7676 37.9976 72.5299C33.3871 77.2679 26.1893 80.5505 15.328 78.8565L15.1739 79.8446ZM22.6264 73.0088C22.6861 74.4329 21.5988 75.7107 19.9758 76.7691C18.3823 77.8081 16.4316 78.5269 15.1251 78.8666L15.3767 79.8344C16.7549 79.4761 18.8133 78.7209 20.522 77.6067C22.201 76.5119 23.7089 74.9574 23.6255 72.9669L22.6264 73.0088ZM6.45939 76.8309C12.0417 73.8484 15.9634 72.6868 18.5773 72.4244C19.8834 72.2933 20.8477 72.3882 21.5243 72.5805C22.2073 72.7746 22.5644 73.0574 22.7162 73.2744L23.5356 72.7012C23.2097 72.2354 22.6189 71.852 21.7977 71.6186C20.9701 71.3834 19.8739 71.2892 18.4774 71.4294C15.6863 71.7096 11.6347 72.932 5.98814 75.9489L6.45939 76.8309ZM8.17815 84.9243C5.38037 83.9022 3.67596 82.9322 2.73184 82.062C1.80241 81.2054 1.67089 80.5133 1.82741 79.9664C2.00191 79.3567 2.58001 78.7425 3.45501 78.1801C4.31304 77.6287 5.37545 77.1794 6.37312 76.8671L6.07441 75.9128C5.01969 76.2429 3.86903 76.7253 2.91436 77.3389C1.97667 77.9415 1.14244 78.7255 0.866018 79.6912C0.571622 80.7198 0.9506 81.7803 2.05411 82.7974C3.14294 83.8009 4.99393 84.8257 7.83503 85.8635L8.17815 84.9243ZM31.6419 92.6993C31.2662 92.7919 30.7183 92.8075 30.0022 92.7339C29.2941 92.6611 28.4567 92.5053 27.5196 92.2804C25.6457 91.8308 23.4095 91.1143 21.0767 90.2727C16.4127 88.5901 11.4041 86.4229 8.21748 84.9406L7.7957 85.8473C11.0008 87.3382 16.0377 89.518 20.7373 91.2133C23.0862 92.0607 25.3613 92.7909 27.2863 93.2528C28.2487 93.4837 29.1326 93.6498 29.9 93.7287C30.6593 93.8067 31.3409 93.8034 31.8812 93.6702L31.6419 92.6993ZM23.3179 85.1528C30.2969 87.8557 31.4299 91.7523 31.2651 93.1252L32.258 93.2444C32.4983 91.2421 30.8933 87.0143 23.679 84.2203L23.3179 85.1528ZM51.953 55.7356C51.1958 66.9104 46.2868 73.956 40.4819 78.2438C34.6577 82.5458 27.9073 84.0877 23.4872 84.1867L23.5096 85.1864C28.1012 85.0837 35.0601 83.4918 41.076 79.0481C47.1112 74.5902 52.1731 67.2781 52.9507 55.8033L51.953 55.7356ZM78.7094 27.0534C73.9233 45.4517 59.0957 53.5454 52.3274 55.2852L52.5764 56.2537C59.5997 54.4483 74.7769 46.1426 79.6772 27.3052L78.7094 27.0534ZM69.4478 5.00862C73.5372 8.19863 75.9363 12.5433 77.2704 16.7018C78.6055 20.8634 78.863 24.8062 78.6946 27.1433L79.692 27.2152C79.8693 24.7545 79.5979 20.6834 78.2226 16.3963C76.8463 12.1061 74.3536 7.56721 70.0628 4.22014L69.4478 5.00862ZM56.1384 2.5451C56.8798 1.96267 57.8597 1.67976 59.0063 1.6367C60.1528 1.59363 61.4325 1.7922 62.7304 2.13851C65.3272 2.8314 67.9147 4.09311 69.4981 5.04313L70.0126 4.18563C68.3717 3.20116 65.6976 1.89525 62.9882 1.17232C61.6331 0.810731 60.2485 0.589335 58.9687 0.637401C57.689 0.685459 56.4805 1.00474 55.5207 1.7587L56.1384 2.5451ZM36.8274 40.1688C34.1733 40.4696 32.3548 41.031 31.1932 41.7884C30.0037 42.564 29.4908 43.5583 29.521 44.638C29.55 45.6707 30.0743 46.6928 30.7498 47.5818C31.4324 48.4803 32.312 49.299 33.1448 49.9342L33.7513 49.1392C32.9706 48.5437 32.1613 47.7867 31.546 46.9769C30.9236 46.1577 30.5411 45.3388 30.5206 44.61C30.5015 43.9283 30.7967 43.2407 31.7394 42.6261C32.7099 41.9933 34.3475 41.4562 36.94 41.1624L36.8274 40.1688ZM46.4408 49.9346C46.3598 47.3957 44.8104 45.2276 42.9326 43.5859C41.0483 41.9384 38.7612 40.7552 37.0395 40.1905L36.7279 41.1407C38.3317 41.6667 40.4987 42.7862 42.2744 44.3387C44.0566 45.8969 45.373 47.826 45.4413 49.9665L46.4408 49.9346ZM33.2457 49.9939C40.6833 53.2849 44.9983 51.7388 46.3119 50.2859L45.5701 49.6153C44.6821 50.5975 40.9176 52.2951 33.6503 49.0795L33.2457 49.9939Z"
+            fill="black" />
+        </svg>
+
+      </div>
+      <div class="flex flex-col items-center justify-center relative z-10">
+        <h1
+          class="judul text-[#1EDB6A] text-[20px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[36px] text-center my-20" data-aos="fade-up" data-aos-duration="1000">
+          F A Q
+        </h1>
+      </div>
+      <div class="grid md:grid-cols-2 relative pl-10 md:pl-20 z-20 mb-20">
+        <div class="absolute -top-10 md:left-5 lg:hidden">
+          <svg width="68" height="34" viewBox="0 0 68 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M27.7675 22.1469L28.0998 31.8612L27.4521 31.8834L27.0953 21.4495L52.4245 20.5831L52.4491 21.3027L27.7675 22.1469Z"
+              fill="white" />
+            <path
+              d="M23.7712 17.144L24.1034 26.8583L23.4558 26.8804L23.0989 16.4465L48.4281 15.5802L48.4527 16.2998L23.7712 17.144Z"
+              fill="white" />
+            <path
+              d="M19.7748 12.141L20.1071 21.8553L19.4595 21.8775L19.1026 11.4436L44.4318 10.5773L44.4564 11.2968L19.7748 12.141Z"
+              fill="white" />
+            <path
+              d="M15.7792 6.13809L16.1115 15.8524L15.4639 15.8746L15.107 5.44066L40.4362 4.57433L40.4608 5.29391L15.7792 6.13809Z"
+              fill="white" />
+          </svg>
+        </div>
+        <div class="absolute -bottom-10 right-0 md:right-5 lg:hidden">
+          <svg width="67" height="34" viewBox="0 0 67 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M40.1259 12.6551L39.7865 2.94107L40.4341 2.91845L40.7986 13.3521L15.47 14.2369L15.4449 13.5173L40.1259 12.6551Z"
+              fill="white" />
+            <path
+              d="M44.1259 17.6551L43.7865 7.94107L44.4341 7.91845L44.7986 18.3521L19.47 19.2369L19.4449 18.5173L44.1259 17.6551Z"
+              fill="white" />
+            <path
+              d="M48.1259 22.6551L47.7865 12.9411L48.4341 12.9184L48.7986 23.3521L23.47 24.2369L23.4449 23.5173L48.1259 22.6551Z"
+              fill="white" />
+            <path
+              d="M52.1259 28.6551L51.7865 18.9411L52.4341 18.9184L52.7986 29.3521L27.47 30.2369L27.4449 29.5173L52.1259 28.6551Z"
+              fill="white" />
+          </svg>
+        </div>
+        <div class="w-full p-4 mb-8 sm:p-8 lg:px-6 xl:px-8" data-aos="fade-right" data-aos-duration="1000">
+          <button class="flex flex-row items-center w-[100%] md:w-[96%] xl:w-[84%] text-left faq-btn"
+            @click="openFaq1 = !openFaq1">
+            <div class="w-full">
+              <h4 class="mt-1 text-lg md:text-sm xl:text-xl font-bold text-white">
+                Apa itu Cloubee?
+              </h4>
+            </div>
+            <div
+              class="bg-primary/5 dark:/5 text-primary mr-5 flex h-10 w-[200px] max-w-[40px] items-center justify-center">
+              <svg :class="openFaq6 && 'rotate-180'" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                color="white" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 15.675C10.7937 15.675 10.6219 15.6062 10.45 15.4687L2.54374 7.69998C2.23436 7.3906 2.23436 6.90935 2.54374 6.59998C2.85311 6.2906 3.33436 6.2906 3.64374 6.59998L11 13.7844L18.3562 6.53123C18.6656 6.22185 19.1469 6.22185 19.4562 6.53123C19.7656 6.8406 19.7656 7.32185 19.4562 7.63123L11.55 15.4C11.3781 15.5719 11.2062 15.675 11 15.675Z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+          </button>
+          <div x-show="openFaq1" class="faq-content flex justify-center md:justify-start w-full -ml-5 md:-ml-0">
+            <p class="faq-1 text-center md:text-start md:w-[80%] py-3 text-base leading-relaxed text-body-color text-white/80">
+              Cloubee adalah platform website statis yang bertujuan untuk membantu masyarakat yang membutuhkan. dan
+              membantu pengguna
+              muslim untuk membayar zakat, serta menyediakan donasi langsung melalui lembaga-lembaga amal yang tersedia
+              dan
+              terpercaya.
+            </p>
+          </div>
+        </div>
+        <div class="w-full p-4 mb-8 sm:p-8 lg:px-6 xl:px-8" data-aos="fade-left" data-aos-duration="1000">
+          <button class="flex flex-row items-center w-[100%] md:w-[96%] xl:w-[84%] text-left faq-btn"
+            @click="openFaq2 = !openFaq2">
+            <div class="w-full">
+              <h4 class="mt-1 text-lg md:text-sm xl:text-xl font-bold text-white">
+                Kenapa harus Cloubee?
+              </h4>
+            </div>
+            <div
+              class="bg-primary/5 dark:/5 text-primary mr-5 flex h-10 w-[200px] max-w-[40px] items-center justify-center">
+              <svg :class="openFaq6 && 'rotate-180'" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                color="white" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 15.675C10.7937 15.675 10.6219 15.6062 10.45 15.4687L2.54374 7.69998C2.23436 7.3906 2.23436 6.90935 2.54374 6.59998C2.85311 6.2906 3.33436 6.2906 3.64374 6.59998L11 13.7844L18.3562 6.53123C18.6656 6.22185 19.1469 6.22185 19.4562 6.53123C19.7656 6.8406 19.7656 7.32185 19.4562 7.63123L11.55 15.4C11.3781 15.5719 11.2062 15.675 11 15.675Z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+          </button>
+          <div x-show="openFaq2" class="faq-content flex justify-center md:justify-start w-full -ml-5 md:-ml-0">
+            <p class="faq-2 py-3  text-center md:text-start md:w-[80%] text-base leading-relaxed text-body-color text-white/80">
+              Cloubee menyediakan informasi bagi para donatur yang
+              bersedia untuk membantu masyarakat, serta berbagai fitur lainnya.
+            </p>
+          </div>
+        </div>
+        <div class="w-full p-4 mb-8 sm:p-8 lg:px-6 xl:px-8" data-aos="fade-right" data-aos-duration="1000">
+          <button class="flex flex-row items-center w-[100%] md:w-[96%] xl:w-[84%] text-left faq-btn"
+            @click="openFaq3 = !openFaq3">
+            <div class="w-full">
+              <h4 class="mt-1 text-lg md:text-sm xl:text-xl font-bold text-white">
+                Apakah Cloubee aman?
+              </h4>
+            </div>
+            <div
+              class="bg-primary/5 dark:/5 text-primary mr-5 flex h-10 w-[200px] max-w-[40px] items-center justify-center">
+              <svg :class="openFaq6 && 'rotate-180'" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                color="white" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 15.675C10.7937 15.675 10.6219 15.6062 10.45 15.4687L2.54374 7.69998C2.23436 7.3906 2.23436 6.90935 2.54374 6.59998C2.85311 6.2906 3.33436 6.2906 3.64374 6.59998L11 13.7844L18.3562 6.53123C18.6656 6.22185 19.1469 6.22185 19.4562 6.53123C19.7656 6.8406 19.7656 7.32185 19.4562 7.63123L11.55 15.4C11.3781 15.5719 11.2062 15.675 11 15.675Z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+          </button>
+          <div x-show="openFaq3" class="faq-content flex justify-center md:justify-start w-full -ml-5 md:-ml-0">
+            <p class="faq-3  text-center md:text-start md:w-[80%] py-3 text-base leading-relaxed text-body-color text-white/80">
+              Ya, Website Cloubee sangatlah aman sebab hanya diciptakan untuk memberi informasi kepada donatur
+              sehingga tidak ada pencurian data ataupun sebagainya
+            </p>
+          </div>
+        </div>
+        <div class="w-full p-4 mb-8 sm:p-8 lg:px-6 xl:px-8" data-aos="fade-left" data-aos-duration="1000">
+          <button class="flex flex-row items-center w-[100%] md:w-[96%] xl:w-[84%] text-left faq-btn"
+            @click="openFaq4 = !openFaq4">
+            <div class="w-full">
+              <h4 class="mt-1 text-lg md:text-sm xl:text-xl font-bold text-white">
+                Metode penggalangan dana Cloubee?
+              </h4>
+            </div>
+            <div
+              class="bg-primary/5 dark:/5 text-primary mr-5 flex h-10 w-[200px] max-w-[40px] items-center justify-center">
+              <svg :class="openFaq6 && 'rotate-180'" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                color="white" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 15.675C10.7937 15.675 10.6219 15.6062 10.45 15.4687L2.54374 7.69998C2.23436 7.3906 2.23436 6.90935 2.54374 6.59998C2.85311 6.2906 3.33436 6.2906 3.64374 6.59998L11 13.7844L18.3562 6.53123C18.6656 6.22185 19.1469 6.22185 19.4562 6.53123C19.7656 6.8406 19.7656 7.32185 19.4562 7.63123L11.55 15.4C11.3781 15.5719 11.2062 15.675 11 15.675Z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+          </button>
+          <div x-show="openFaq4" class="faq-content flex justify-center md:justify-start w-full -ml-5 md:-ml-0">
+            <p class="faq-4  text-center md:text-start md:w-[80%] py-3 text-base leading-relaxed text-body-color text-white/80">
+              Cloubee mengumpulkan informasi penggalangan dana dari berbagai lembaga/platform donasi, sehingga metode
+              penggalangan
+              dana yang digunakan sesuai dengan platform yang terkait dengan penggalangan tersebut.
+            </p>
+          </div>
+        </div>
+    </section>
   </main>
-  <footer></footer>
+  <footer class="py-6 px-20 relative z-20">
+    <div class="border mb-10"></div>
+    <div class="flex flex-col gap-4 md:flex-row justify-center md:justify-between items-center">
+      <div class="flex flex-col items-center gap-5 md:flex-row text-center" >
+        <img src="../assets/img/favicon.svg" alt="logo" width="80" height="80">
+        <span id="copyright" class=""></span>
+      </div>
+      <div class="flex flex-row justify-center items-center gap-5">
+        <a href="https://www.instagram.com/cloubee.team" target="_blank" class="p-1 border-2 border-black/40 shadow-md  rounded-full cursor-pointer">
+          <img src="../assets/img/footer/instagram.png" alt="instagram" width="50" class="shadow-xl rounded-full">
+        </a>
+        <a href="https://wa.me/+6285781571635" target="_blank" class="p-1 border-2 border-black/40 shadow-md  rounded-full cursor-pointer">
+          <img src="../assets/img/footer/whatsapp.webp" alt="whatsapp" width="50" class="shadow-xl rounded-full">
+        </a>
+        <a href="mailto:cloubeeteam@gmail.com" target="_blank" class="p-4 border-2 border-black/40 shadow-md  rounded-full cursor-pointer">
+          <img src="../assets/img/footer/gmail.webp" alt="gmail" width="30" class="shadow-xl rounded-full">
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
