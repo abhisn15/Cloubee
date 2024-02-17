@@ -463,13 +463,13 @@ function selengkapnyaZakatMaal() {
     extraDesk.classList.remove("hidden");
     Card.classList.add("xl:h-[840px]");
     Card.classList.add("md:h-[740px]");
-    Card.classList.add("h-[540px]");
+    Card.classList.add("h-[640px]");
     readMore.textContent = "Sembunyikan";
   } else {
     extraDesk.classList.add("hidden");
     Card.classList.remove("xl:h-[840px]");
     Card.classList.remove("md:h-[740px]");
-    Card.classList.remove("h-[540px]");
+    Card.classList.remove("h-[640px]");
     readMore.textContent = "Selengkapnya...";
   }
 }
